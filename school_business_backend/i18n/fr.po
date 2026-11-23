@@ -1998,3 +1998,8 @@ msgstr "Aucun cours planifié."
 #: code:addons/school_business_backend/static/src/timetable_calendar/timetable_calendar.xml:0
 msgid "All levels"
 msgstr "Tous les niveaux"
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_academics
+msgid "School Life"
+msgstr "Vie scolaire"

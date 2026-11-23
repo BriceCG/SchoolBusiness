@@ -13,29 +13,34 @@
               action="action_school_admission"
               sequence="10"/>
 
+    <menuitem id="menu_school_academics"
+              name="School Life"
+              parent="menu_school_root"
+              sequence="20"/>
+
     <menuitem id="menu_school_student"
               name="Students"
-              parent="menu_school_root"
+              parent="menu_school_academics"
               action="action_school_student"
-              sequence="20"/>
+              sequence="10"/>
 
     <menuitem id="menu_school_teacher"
               name="Teachers"
-              parent="menu_school_root"
+              parent="menu_school_academics"
               action="action_school_teacher"
-              sequence="25"/>
+              sequence="20"/>
 
     <menuitem id="menu_school_timetable"
               name="Timetables"
-              parent="menu_school_root"
+              parent="menu_school_academics"
               action="action_school_timetable_slot"
-              sequence="27"/>
+              sequence="30"/>
 
     <menuitem id="menu_school_grade"
               name="Grades"
-              parent="menu_school_root"
+              parent="menu_school_academics"
               action="action_school_grade"
-              sequence="30"/>
+              sequence="40"/>
 
     <menuitem id="menu_school_configuration"
               name="Configuration"

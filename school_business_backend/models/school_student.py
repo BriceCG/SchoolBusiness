@@ -90,11 +90,14 @@ class SchoolStudent(models.Model):
     def _compute_average_grade(self):
         for rec in self:
             grades = rec.grade_ids.filtered(lambda g: g.academic_year == rec.academic_year)
-            total_coef = sum(grades.mapped('subject_id.coefficient'))
-            rec.average_grade = (
-                sum(g.score_on_20 * g.subject_id.coefficient for g in grades) / total_coef
-                if total_coef else 0.0
-            )
+            # Same rule as the report card and the student portal: the average of each
+            # subject, then the average of the subjects weighted by their coefficient.
+            weighted = total_coef = 0.0
+            for subject in grades.subject_id:
+                scores = grades.filtered(lambda g: g.subject_id == subject).mapped('score_on_20')
+                weighted += sum(scores) / len(scores) * subject.coefficient
+                total_coef += subject.coefficient
+            rec.average_grade = weighted / total_coef if total_coef else 0.0
 
     @api.constrains('classroom_id', 'level_id', 'state')
     def _check_classroom(self):
