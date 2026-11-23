@@ -51,6 +51,7 @@ msgstr "Nom du fichier du document de candidature"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__active
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__state__active
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__active
 msgid "Active"
 msgstr "Actif"
 
@@ -117,10 +118,12 @@ msgstr "Dossier soumis"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__company_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__company_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__company_id
 msgid "Company"
 msgstr "Société"
 
 #. module: school_business_backend
+#. odoo-python
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__partner_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__partner_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__partner_id
@@ -239,6 +242,7 @@ msgstr "Sexe"
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
 msgid "Group By"
 msgstr "Grouper par"
 
@@ -273,11 +277,15 @@ msgid "Legal Guardian"
 msgstr "Tuteur légal"
 
 #. module: school_business_backend
+#. odoo-javascript
 #: model:ir.model.fields,field_description:school_business_backend.field_school_level__name
 #: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__level_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__level_id
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__level_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
+#: code:addons/school_business_backend/static/src/timetable_calendar/timetable_calendar.xml:0
 msgid "Level"
 msgstr "Niveau"
 
@@ -807,6 +815,7 @@ msgid "School"
 msgstr "École"
 
 #. module: school_business_backend
+#. odoo-python
 #: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
 #: model:ir.actions.act_window,name:school_business_backend.action_school_grade
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__grade_count
@@ -990,6 +999,8 @@ msgstr "Veuillez renseigner l'e-mail de l'élève avant l'inscription : il sert 
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__classroom_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
 msgid "Classroom"
 msgstr "Salle de classe"
 
@@ -1061,6 +1072,9 @@ msgstr "Note"
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
 #: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__subject_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
 msgid "Subject"
 msgstr "Matière"
 
@@ -1124,6 +1138,9 @@ msgstr "Note (/20)"
 #: model:ir.model,name:school_business_backend.model_school_teacher
 #: model:ir.sequence,name:school_business_backend.seq_school_teacher
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__teacher_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
 msgid "Teacher"
 msgstr "Professeur"
 
@@ -1282,6 +1299,7 @@ msgid "-"
 msgstr "-"
 
 #. module: school_business_backend
+#. odoo-python
 #: model:ir.actions.act_window,name:school_business_backend.action_school_classroom
 #: model:ir.ui.menu,name:school_business_backend.menu_school_classroom
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_list
@@ -1301,6 +1319,7 @@ msgstr "Salles de classe"
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
 msgid "Archived"
 msgstr "Archivé"
 
@@ -1408,6 +1427,7 @@ msgstr "Créer une matière (ex. Mathématiques, Français, Histoire...)"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__name
 #: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
 #: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__school_year_id
 msgid "School Year"
 msgstr "Année scolaire"
 
@@ -1424,11 +1444,13 @@ msgstr "Créer une année scolaire"
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__date_start
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__start_datetime
 msgid "Start Date"
 msgstr "Date de début"
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__date_end
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__stop_datetime
 msgid "End Date"
 msgstr "Date de fin"
 
@@ -1515,16 +1537,19 @@ msgid "The end date must be after the start date."
 msgstr "La date de fin doit être postérieure à la date de début."
 
 #. module: school_business_backend
+#. odoo-python
 #: code:addons/school_business_backend/models/school_year.py:0
 msgid "The school year %(year)s overlaps with %(other)s."
 msgstr "L'année scolaire %(year)s chevauche %(other)s."
 
 #. module: school_business_backend
+#. odoo-python
 #: code:addons/school_business_backend/models/school_year.py:0
 msgid "The year %s is the current school year. Select another current year in the settings before closing it."
 msgstr "L'année %s est l'année scolaire en cours. Sélectionnez une autre année en cours dans les paramètres avant de la clôturer."
 
 #. module: school_business_backend
+#. odoo-python
 #: code:addons/school_business_backend/models/res_company.py:0
 #: code:addons/school_business_backend/models/school_year.py:0
 msgid "A closed school year cannot be the current year."
@@ -1589,16 +1614,19 @@ msgstr "Matricule :"
 
 #. module: school_business_backend
 #: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
 msgid "Level:"
 msgstr "Niveau :"
 
 #. module: school_business_backend
 #: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
 msgid "Classroom:"
 msgstr "Classe :"
 
 #. module: school_business_backend
 #: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
 msgid "School Year:"
 msgstr "Année scolaire :"
 
@@ -1788,3 +1816,185 @@ msgstr "Créer un professeur"
 #: model_terms:ir.actions.act_window,help:school_business_backend.action_school_teacher
 msgid "Each teacher is linked to a contact, to the subjects taught and to the classrooms."
 msgstr "Chaque professeur est lié à un contact, aux matières enseignées et aux classes."
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_timetable_slot
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_form
+msgid "Timetable Slot"
+msgstr "Créneau d'emploi du temps"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__weekday
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
+msgid "Day"
+msgstr "Jour"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__start_time
+msgid "Start"
+msgstr "Début"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__end_time
+msgid "End"
+msgstr "Fin"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__room
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
+msgid "Room"
+msgstr "Salle"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_timetable_slot__name
+msgid "Slot"
+msgstr "Créneau"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_timetable_slot__level_id
+msgid "Level of the timetable. The lesson is given to all the classrooms of the level unless a classroom is selected."
+msgstr "Niveau de l'emploi du temps. Le cours est donné à toutes les classes du niveau, sauf si une classe est sélectionnée."
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_timetable_slot__classroom_id
+msgid "Leave empty for a lesson given to the whole level."
+msgstr "Laisser vide pour un cours donné à tout le niveau."
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_timetable_slot__room
+msgid "Room where the lesson takes place, if different from the location of the classroom."
+msgstr "Salle où a lieu le cours, si elle diffère du lieu de la classe."
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__timetable_slot_ids
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__timetable_slot_ids
+#: code:addons/school_business_backend/models/school_classroom.py:0
+#: code:addons/school_business_backend/models/school_teacher.py:0
+#: model:ir.actions.report,name:school_business_backend.action_report_school_timetable
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_calendar
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_list
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form_timetable
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
+msgid "Timetable"
+msgstr "Emploi du temps"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__timetable_slot_count
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__timetable_slot_count
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form_timetable
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form_timetable
+msgid "Lessons"
+msgstr "Cours"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__0
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__1
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__2
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__3
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__4
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__5
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_timetable_slot__weekday__6
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_timetable.py:0
+msgid "The times must be between 00:00 and 24:00."
+msgstr "Les heures doivent être comprises entre 00:00 et 24:00."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_timetable.py:0
+msgid "The end time must be after the start time."
+msgstr "L'heure de fin doit être postérieure à l'heure de début."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_timetable.py:0
+msgid "The classroom %(room)s does not belong to the level %(level)s."
+msgstr "La classe %(room)s n'appartient pas au niveau %(level)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_timetable.py:0
+msgid "The timetable of %(room)s already has a lesson of %(subject)s on %(day)s from %(start)s to %(end)s."
+msgstr "L'emploi du temps de %(room)s a déjà un cours de %(subject)s le %(day)s de %(start)s à %(end)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_timetable.py:0
+msgid "The teacher %(teacher)s already teaches in %(room)s on %(day)s from %(start)s to %(end)s."
+msgstr "Le professeur %(teacher)s enseigne déjà en %(room)s le %(day)s de %(start)s à %(end)s."
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_timetable
+#: model:ir.actions.act_window,name:school_business_backend.action_school_timetable_slot
+msgid "Timetables"
+msgstr "Emplois du temps"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_timetable_slot
+msgid "Add a lesson to a timetable"
+msgstr "Ajouter un cours à un emploi du temps"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_timetable_slot
+msgid "A lesson links a classroom, a subject and a teacher to a day and a time range."
+msgstr "Un cours relie une classe, une matière et un professeur à un jour et une plage horaire."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_timetable_slot_search
+msgid "Search Timetable"
+msgstr "Rechercher dans l'emploi du temps"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form_timetable
+msgid "Print Timetable"
+msgstr "Imprimer l'emploi du temps"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
+msgid "Location:"
+msgstr "Lieu :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
+msgid "Time"
+msgstr "Horaire"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_timetable
+msgid "No lesson planned."
+msgstr "Aucun cours planifié."
+
+#. module: school_business_backend
+#. odoo-javascript
+#: code:addons/school_business_backend/static/src/timetable_calendar/timetable_calendar.xml:0
+msgid "All levels"
+msgstr "Tous les niveaux"

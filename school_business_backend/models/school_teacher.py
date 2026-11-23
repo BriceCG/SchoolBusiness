@@ -48,6 +48,10 @@ class SchoolTeacher(models.Model):
     classroom_count = fields.Integer(string="Classrooms", compute='_compute_counts')
     grade_count = fields.Integer(string="Grades Entered", compute='_compute_counts')
     notes = fields.Text(string="Internal Notes")
+    timetable_slot_ids = fields.One2many(
+        'school.timetable.slot', 'teacher_id', string="Timetable")
+    timetable_slot_count = fields.Integer(
+        string="Lessons", compute='_compute_timetable_slot_count')
 
     _sql_constraints = [
         ('teacher_number_unique', 'unique(teacher_number)', "The teacher number must be unique."),
@@ -64,6 +68,13 @@ class SchoolTeacher(models.Model):
         for rec in self:
             rec.classroom_count = len(rec.classroom_ids)
             rec.grade_count = grade_counts.get(rec.user_id.id, 0)
+
+    @api.depends('timetable_slot_ids')
+    def _compute_timetable_slot_count(self):
+        counts = dict(self.env['school.timetable.slot']._read_group(
+            [('teacher_id', 'in', self.ids)], ['teacher_id'], ['__count']))
+        for rec in self:
+            rec.timetable_slot_count = counts.get(rec, 0)
 
     @api.constrains('date_of_birth', 'hire_date')
     def _check_dates(self):
@@ -90,6 +101,17 @@ class SchoolTeacher(models.Model):
             'res_model': 'res.partner',
             'view_mode': 'form',
             'res_id': self.partner_id.id,
+        }
+
+    def action_view_timetable(self):
+        self.ensure_one()
+        return {
+            'name': _("Timetable"),
+            'type': 'ir.actions.act_window',
+            'res_model': 'school.timetable.slot',
+            'view_mode': 'calendar,list,form',
+            'domain': [('teacher_id', '=', self.id)],
+            'context': {'default_teacher_id': self.id, 'timetable_all_levels': True},
         }
 
     def action_view_classrooms(self):

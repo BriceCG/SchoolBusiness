@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="school_business_backend.TimetableCalendarController.controlButtons">
+        <div class="d-flex align-items-center gap-2">
+            <label class="mb-0 fw-semibold text-nowrap" for="timetable_level">Level</label>
+            <select id="timetable_level" class="form-select w-auto" t-on-change="onLevelChange">
+                <option t-if="props.context.timetable_all_levels" value="0"
+                        t-att-selected="!model.levelId">All levels</option>
+                <t t-foreach="model.levels || []" t-as="level" t-key="level.id">
+                    <option t-att-value="level.id" t-att-selected="level.id === model.levelId"
+                            t-esc="level.display_name"/>
+                </t>
+            </select>
+        </div>
+    </t>
+
+</templates>

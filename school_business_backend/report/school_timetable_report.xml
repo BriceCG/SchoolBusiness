@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_school_timetable" model="ir.actions.report">
+        <field name="name">Timetable</field>
+        <field name="model">school.classroom</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_business_backend.report_school_timetable</field>
+        <field name="report_file">school_business_backend.report_school_timetable</field>
+        <field name="print_report_name">'Timetable - %s' % object.name</field>
+        <field name="binding_model_id" ref="model_school_classroom"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_school_timetable">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="room">
+                <t t-call="web.external_layout">
+                    <t t-set="company" t-value="room.company_id"/>
+                    <div class="page">
+                        <h2 class="text-center mb-4">Timetable</h2>
+                        <table class="table table-sm table-borderless mb-4">
+                            <tr>
+                                <td class="fw-bold">Classroom:</td>
+                                <td><span t-field="room.name"/></td>
+                                <td class="fw-bold">Level:</td>
+                                <td><span t-field="room.level_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">School Year:</td>
+                                <td><span t-field="room.school_year_id.name"/></td>
+                                <td class="fw-bold">Location:</td>
+                                <td><span t-out="room.location or '-'"/></td>
+                            </tr>
+                        </table>
+
+                        <t t-foreach="room._get_timetable_days()" t-as="day">
+                            <h5 class="mt-4" t-out="day[0]"/>
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th style="width: 20%">Time</th>
+                                        <th>Subject</th>
+                                        <th>Teacher</th>
+                                        <th>Room</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="day[1]" t-as="slot">
+                                        <td>
+                                            <span t-out="slot.start_time" t-options="{'widget': 'float_time'}"/>
+                                            -
+                                            <span t-out="slot.end_time" t-options="{'widget': 'float_time'}"/>
+                                        </td>
+                                        <td t-out="slot.subject_id.name"/>
+                                        <td t-out="slot.teacher_id.name or '-'"/>
+                                        <td t-out="slot.room or room.location or '-'"/>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <p t-if="not room.timetable_slot_ids" class="text-muted text-center">
+                            No lesson planned.
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

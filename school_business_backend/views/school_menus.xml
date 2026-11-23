@@ -25,6 +25,12 @@
               action="action_school_teacher"
               sequence="25"/>
 
+    <menuitem id="menu_school_timetable"
+              name="Timetables"
+              parent="menu_school_root"
+              action="action_school_timetable_slot"
+              sequence="27"/>
+
     <menuitem id="menu_school_grade"
               name="Grades"
               parent="menu_school_root"

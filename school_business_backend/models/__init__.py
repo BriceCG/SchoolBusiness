@@ -10,3 +10,4 @@ from . import school_grade
 from . import school_admission
 from . import school_teacher
 from . import res_partner
+from . import school_timetable

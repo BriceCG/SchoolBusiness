@@ -39,6 +39,12 @@
             <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
         </record>
 
+        <record id="school_timetable_slot_company_rule" model="ir.rule">
+            <field name="name">Timetable Slot: multi-company</field>
+            <field name="model_id" ref="model_school_timetable_slot"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
         <record id="school_classroom_company_rule" model="ir.rule">
             <field name="name">Classroom: multi-company</field>
             <field name="model_id" ref="model_school_classroom"/>

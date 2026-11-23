@@ -44,7 +44,51 @@ class SchoolClassroom(models.Model):
             'name': _("Students"),
             'type': 'ir.actions.act_window',
             'res_model': 'school.student',
-            'view_mode': 'list,form',
+            'view_mode': 'calendar,list,form',
             'domain': [('classroom_id', '=', self.id)],
             'context': {'default_classroom_id': self.id, 'default_level_id': self.level_id.id},
         }
+
+    timetable_slot_ids = fields.One2many(
+        'school.timetable.slot', 'classroom_id', string="Timetable")
+    timetable_slot_count = fields.Integer(
+        string="Lessons", compute='_compute_timetable_slot_count')
+
+    @api.depends('timetable_slot_ids')
+    def _compute_timetable_slot_count(self):
+        counts = dict(self.env['school.timetable.slot']._read_group(
+            [('classroom_id', 'in', self.ids)], ['classroom_id'], ['__count']))
+        for room in self:
+            room.timetable_slot_count = counts.get(room, 0)
+
+    def _get_timetable_days(self):
+        """Return the lessons of the classroom grouped by day: [(day label, slots)]."""
+        self.ensure_one()
+        from .school_timetable import WEEKDAYS
+        slots = self.env['school.timetable.slot'].search([
+            ('level_id', '=', self.level_id.id),
+            ('school_year_id', '=', self.school_year_id.id),
+            '|', ('classroom_id', '=', self.id), ('classroom_id', '=', False),
+        ]).sorted(lambda s: (s.weekday, s.start_time))
+        return [
+            (label, slots.filtered(lambda s, key=key: s.weekday == key))
+            for key, label in WEEKDAYS
+            if slots.filtered(lambda s, key=key: s.weekday == key)
+        ]
+
+    def action_view_timetable(self):
+        self.ensure_one()
+        return {
+            'name': _("Timetable"),
+            'type': 'ir.actions.act_window',
+            'res_model': 'school.timetable.slot',
+            'view_mode': 'list,form',
+            'context': {
+                'default_classroom_id': self.id,
+                'default_level_id': self.level_id.id,
+                'search_default_classroom_id': self.id,
+            },
+        }
+
+    def action_print_timetable(self):
+        return self.env.ref('school_business_backend.action_report_school_timetable').report_action(self)
