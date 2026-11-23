@@ -48,6 +48,9 @@ msgstr "Nom du fichier du document de candidature"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__active
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__state__active
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__active
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__state__active
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Active"
 msgstr "Actif"
 
@@ -113,12 +116,16 @@ msgstr "Dossier soumis"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_grade__company_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__company_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__company_id
 msgid "Company"
 msgstr "Société"
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__partner_id
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__partner_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__partner_id
+#: code:addons/school_business_backend/models/school_teacher.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Contact"
 msgstr "Contact"
 
@@ -155,6 +162,7 @@ msgstr "Créez un niveau scolaire (ex. Grade 1, Grade 6, Grade 12...)"
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__date_of_birth
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__date_of_birth
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__date_of_birth
 msgid "Date of Birth"
 msgstr "Date de naissance"
 
@@ -213,12 +221,15 @@ msgstr "Père"
 #. module: school_business_backend
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__gender__female
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__gender__female
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__gender__female
 msgid "Female"
 msgstr "Féminin"
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__gender
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__gender
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__gender
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Gender"
 msgstr "Sexe"
 
@@ -227,6 +238,7 @@ msgstr "Sexe"
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Group By"
 msgstr "Grouper par"
 
@@ -251,6 +263,7 @@ msgstr "Date d'entretien"
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_admission__notes
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__notes
 msgid "Internal Notes"
 msgstr "Notes internes"
 
@@ -271,6 +284,7 @@ msgstr "Niveau"
 #. module: school_business_backend
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__gender__male
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__gender__male
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__gender__male
 msgid "Male"
 msgstr "Masculin"
 
@@ -800,6 +814,8 @@ msgstr "École"
 #: model:ir.ui.menu,name:school_business_backend.menu_school_grade
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_list
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: code:addons/school_business_backend/models/school_teacher.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Grades"
 msgstr "Notes"
 
@@ -1016,6 +1032,7 @@ msgstr "Places disponibles"
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__notes
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Notes"
 msgstr "Notes"
 
@@ -1104,8 +1121,11 @@ msgstr "Note (/20)"
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_grade__teacher_id
+#: model:ir.model,name:school_business_backend.model_school_teacher
+#: model:ir.sequence,name:school_business_backend.seq_school_teacher
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Teacher"
-msgstr "Enseignant"
+msgstr "Professeur"
 
 #. module: school_business_backend
 #. odoo-python
@@ -1150,6 +1170,8 @@ msgstr "Téléphone"
 #: model:ir.model.fields,field_description:school_business_backend.field_school_student__state
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
 #: model:ir.model.fields,field_description:school_business_backend.field_school_year__state
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__state
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Status"
 msgstr "Statut"
 
@@ -1163,6 +1185,8 @@ msgstr "Diplômé"
 #. module: school_business_backend
 #: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__state__left
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__state__left
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Left"
 msgstr "Parti"
 
@@ -1207,6 +1231,7 @@ msgstr "Poids de la matière dans la moyenne de l'élève."
 
 #. module: school_business_backend
 #: model:ir.model.fields,field_description:school_business_backend.field_school_subject__level_ids
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__level_ids
 msgid "Levels"
 msgstr "Niveaux"
 
@@ -1260,6 +1285,10 @@ msgstr "-"
 #: model:ir.actions.act_window,name:school_business_backend.action_school_classroom
 #: model:ir.ui.menu,name:school_business_backend.menu_school_classroom
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_list
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__classroom_ids
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__classroom_count
+#: code:addons/school_business_backend/models/school_teacher.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Classrooms"
 msgstr "Salles de classe"
 
@@ -1270,6 +1299,8 @@ msgstr "Salles de classe"
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
 msgid "Archived"
 msgstr "Archivé"
 
@@ -1312,16 +1343,19 @@ msgstr "Enregistrer une note"
 #: model:ir.actions.act_window,name:school_business_backend.action_school_subject
 #: model:ir.ui.menu,name:school_business_backend.menu_school_subject
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_list
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__subject_ids
 msgid "Subjects"
 msgstr "Matières"
 
 #. module: school_business_backend
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Left School"
 msgstr "A quitté l'école"
 
 #. module: school_business_backend
 #: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
 msgid "Reactivate"
 msgstr "Réactiver"
 
@@ -1633,3 +1667,124 @@ msgstr "Notes de %s"
 #: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
 msgid "All periods"
 msgstr "Toutes les périodes"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__teacher_number
+msgid "Teacher Number"
+msgstr "Numéro de professeur"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__user_id
+msgid "Related User"
+msgstr "Utilisateur associé"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__hire_date
+msgid "Hire Date"
+msgstr "Date d'embauche"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__qualification
+msgid "Qualification"
+msgstr "Qualification"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_teacher__grade_count
+msgid "Grades Entered"
+msgstr "Notes saisies"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_teacher__partner_id
+msgid "Contact of the teacher. A new contact is created when none is selected."
+msgstr "Contact du professeur. Un nouveau contact est créé si aucun n'est sélectionné."
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_teacher__user_id
+msgid "User account used by the teacher to log in."
+msgstr "Compte utilisateur utilisé par le professeur pour se connecter."
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_teacher__qualification
+msgid "Highest degree or certification."
+msgstr "Diplôme ou certification le plus élevé."
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_teacher__state__on_leave
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
+msgid "On Leave"
+msgstr "En congé"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_res_partner__teacher_ids
+msgid "Teacher Records"
+msgstr "Fiches professeur"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_res_partner__is_teacher
+msgid "Is a Teacher"
+msgstr "Est un professeur"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_res_partner__is_teacher
+msgid "Set automatically when a teacher record is linked to this contact."
+msgstr "Renseigné automatiquement lorsqu'une fiche professeur est liée à ce contact."
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_teacher
+#: model:ir.actions.act_window,name:school_business_backend.action_school_teacher
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_list
+msgid "Teachers"
+msgstr "Professeurs"
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_teacher_teacher_number_unique
+msgid "The teacher number must be unique."
+msgstr "Le numéro de professeur doit être unique."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_teacher_partner_unique
+msgid "This contact is already a teacher."
+msgstr "Ce contact est déjà un professeur."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_teacher.py:0
+msgid "The date of birth must be in the past."
+msgstr "La date de naissance doit être dans le passé."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_teacher.py:0
+msgid "The hire date must be after the date of birth."
+msgstr "La date d'embauche doit être postérieure à la date de naissance."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+msgid "Teacher full name"
+msgstr "Nom complet du professeur"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+msgid "Personal Information"
+msgstr "Informations personnelles"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_form
+msgid "Teaching"
+msgstr "Enseignement"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_teacher_search
+msgid "Search Teachers"
+msgstr "Rechercher des professeurs"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_teacher
+msgid "Create a teacher"
+msgstr "Créer un professeur"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_teacher
+msgid "Each teacher is linked to a contact, to the subjects taught and to the classrooms."
+msgstr "Chaque professeur est lié à un contact, aux matières enseignées et aux classes."

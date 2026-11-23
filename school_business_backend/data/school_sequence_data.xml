@@ -18,5 +18,13 @@
             <field name="company_id" eval="False"/>
         </record>
 
+        <record id="seq_school_teacher" model="ir.sequence">
+            <field name="name">Teacher</field>
+            <field name="code">school.teacher</field>
+            <field name="prefix">TCH/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
     </data>
 </odoo>

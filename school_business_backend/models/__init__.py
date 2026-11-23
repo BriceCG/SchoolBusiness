@@ -8,3 +8,5 @@ from . import school_classroom
 from . import school_student
 from . import school_grade
 from . import school_admission
+from . import school_teacher
+from . import res_partner

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_teacher_list" model="ir.ui.view">
+        <field name="name">school.teacher.list</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <list string="Teachers" decoration-muted="state == 'left'">
+                <field name="teacher_number"/>
+                <field name="name"/>
+                <field name="email" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="subject_ids" widget="many2many_tags" optional="show"/>
+                <field name="level_ids" widget="many2many_tags" optional="hide"/>
+                <field name="state" widget="badge" decoration-success="state == 'active'"
+                       decoration-warning="state == 'on_leave'" decoration-danger="state == 'left'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_school_teacher_kanban" model="ir.ui.view">
+        <field name="name">school.teacher.kanban</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                        <div class="text-muted"><field name="teacher_number"/></div>
+                                    </div>
+                                    <field name="image_128" widget="image" class="o_kanban_image_fill_left"
+                                           options="{'size': [32, 32], 'round': true}"/>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <field name="subject_ids" widget="many2many_tags"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_school_teacher_form" model="ir.ui.view">
+        <field name="name">school.teacher.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Teacher">
+                <header>
+                    <button name="action_set_on_leave" string="On Leave" type="object"
+                            invisible="state != 'active'"/>
+                    <button name="action_leave" string="Left School" type="object"
+                            invisible="state == 'left'"/>
+                    <button name="action_reactivate" string="Reactivate" type="object"
+                            invisible="state == 'active'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,on_leave"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_partner" type="object"
+                                class="oe_stat_button" icon="fa-address-card-o" invisible="not id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Contact</span>
+                            </div>
+                        </button>
+                        <button name="action_view_classrooms" type="object"
+                                class="oe_stat_button" icon="fa-building-o" invisible="not id">
+                            <field name="classroom_count" widget="statinfo" string="Classrooms"/>
+                        </button>
+                        <button name="action_view_grades" type="object"
+                                class="oe_stat_button" icon="fa-pencil-square-o"
+                                invisible="not user_id">
+                            <field name="grade_count" widget="statinfo" string="Grades"/>
+                        </button>
+                    </div>
+                    <field name="image_1920" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Teacher full name"/>
+                        </h1>
+                        <div class="o_row">
+                            <field name="teacher_number"/>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Contact">
+                            <field name="email" widget="email"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="user_id" invisible="1"/>
+                        </group>
+                        <group string="Personal Information">
+                            <field name="gender"/>
+                            <field name="date_of_birth"/>
+                            <field name="hire_date"/>
+                            <field name="qualification"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Teaching" name="teaching">
+                            <group>
+                                <field name="subject_ids" widget="many2many_tags"
+                                       options="{'no_create': True}"/>
+                                <field name="level_ids" widget="many2many_tags"
+                                       options="{'no_create': True}"/>
+                                <field name="classroom_ids" widget="many2many_tags"
+                                       options="{'no_create': True}"/>
+                            </group>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_teacher_search" model="ir.ui.view">
+        <field name="name">school.teacher.search</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <search string="Search Teachers">
+                <field name="name"/>
+                <field name="teacher_number"/>
+                <field name="email"/>
+                <field name="subject_ids"/>
+                <field name="level_ids"/>
+                <field name="classroom_ids"/>
+                <filter string="Active" name="filter_active" domain="[('state', '=', 'active')]"/>
+                <filter string="On Leave" name="filter_on_leave" domain="[('state', '=', 'on_leave')]"/>
+                <filter string="Left" name="filter_left" domain="[('state', '=', 'left')]"/>
+                <separator/>
+                <filter string="Archived" name="filter_archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Gender" name="group_gender" context="{'group_by': 'gender'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="context">{'search_default_filter_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smart_help">
+                Create a teacher
+            </p>
+            <p>
+                Each teacher is linked to a contact, to the subjects taught and to the classrooms.
+            </p>
+        </field>
+    </record>
+
+</odoo>

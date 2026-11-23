@@ -31,6 +31,7 @@ This module allows you to:
         'views/school_subject_views.xml',
         'views/school_classroom_views.xml',
         'views/school_student_views.xml',
+        'views/school_teacher_views.xml',
         'views/school_grade_views.xml',
         'views/res_config_settings_views.xml',
         'views/school_menus.xml',

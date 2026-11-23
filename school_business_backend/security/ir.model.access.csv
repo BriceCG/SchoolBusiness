@@ -17,3 +17,5 @@ access_school_grade_user,school.grade.user,model_school_grade,group_school_admis
 access_school_grade_manager,school.grade.manager,model_school_grade,group_school_admission_manager,1,1,1,1
 access_school_period_user,school.period.user,model_school_period,group_school_admission_user,1,0,0,0
 access_school_period_manager,school.period.manager,model_school_period,group_school_admission_manager,1,1,1,1
+access_school_teacher_user,school.teacher.user,model_school_teacher,group_school_admission_user,1,1,1,0
+access_school_teacher_manager,school.teacher.manager,model_school_teacher,group_school_admission_manager,1,1,1,1
