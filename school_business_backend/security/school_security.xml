@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="module_category_school" model="ir.module.category">
+            <field name="name">School Management</field>
+            <field name="description">Manage school admission requests</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_school_admission_user" model="res.groups">
+            <field name="name">Admission Officer</field>
+            <field name="category_id" ref="module_category_school"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_school_admission_manager" model="res.groups">
+            <field name="name">Admission Manager</field>
+            <field name="category_id" ref="module_category_school"/>
+            <field name="implied_ids" eval="[(4, ref('group_school_admission_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="school_admission_company_rule" model="ir.rule">
+            <field name="name">Admission Request: multi-company</field>
+            <field name="model_id" ref="model_school_admission"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="school_student_company_rule" model="ir.rule">
+            <field name="name">Student: multi-company</field>
+            <field name="model_id" ref="model_school_student"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="school_classroom_company_rule" model="ir.rule">
+            <field name="name">Classroom: multi-company</field>
+            <field name="model_id" ref="model_school_classroom"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="school_year_company_rule" model="ir.rule">
+            <field name="name">School Year: multi-company</field>
+            <field name="model_id" ref="model_school_year"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="school_grade_company_rule" model="ir.rule">
+            <field name="name">Grade: multi-company</field>
+            <field name="model_id" ref="model_school_grade"/>
+            <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

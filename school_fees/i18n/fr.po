@@ -1,0 +1,587 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_fees
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Language: fr\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#. module: school_fees
+#: model:ir.model,name:school_fees.model_school_fee_line
+#: model:ir.model.fields,field_description:school_fees.field_account_move__fee_line_id
+msgid "Tuition Fee"
+msgstr "Frais de scolarité"
+
+#. module: school_fees
+#: model:ir.model,name:school_fees.model_school_fee_invoice_wizard
+#: model:ir.actions.act_window,name:school_fees.action_school_fee_invoice_wizard
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_fee_invoice_wizard_form
+msgid "Generate Tuition Invoices"
+msgstr "Générer les factures de scolarité"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_line__level_id
+msgid "Level"
+msgstr "Niveau"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_line__school_year_id
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_invoice_wizard__school_year_id
+msgid "School Year"
+msgstr "Année scolaire"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_line__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_line__amount
+#: model:ir.ui.menu,name:school_fees.menu_school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid "Tuition"
+msgstr "Scolarité"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_fee_line__amount
+msgid ""
+"Total tuition of the school year for this level. It is split into as many "
+"payments as chosen on the student."
+msgstr ""
+"Frais de scolarité totaux de l'année pour ce niveau. Ils sont répartis en "
+"autant de paiements que choisi sur l'élève."
+
+#. module: school_fees
+#: model:ir.model.constraint,message:school_fees.constraint_school_fee_line_amount_positive
+msgid "The amount cannot be negative."
+msgstr "Le montant ne peut pas être négatif."
+
+#. module: school_fees
+#: model:ir.model.constraint,message:school_fees.constraint_school_fee_line_fee_unique
+msgid "The tuition is already defined for this level and this school year."
+msgstr ""
+"Les frais de scolarité sont déjà définis pour ce niveau et cette année "
+"scolaire."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_fee_product_id
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid "Tuition Product"
+msgstr "Produit de scolarité"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_fee_product_id
+msgid ""
+"Product used on the tuition invoices (it gives the income account and the "
+"taxes)."
+msgstr ""
+"Produit utilisé sur les factures de scolarité (il fournit le compte de "
+"produits et les taxes)."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_default_installments
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid "Default Number of Payments"
+msgstr "Nombre de paiements par défaut"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_default_installments
+msgid ""
+"Number of payments proposed by default for a new student. It can be changed "
+"on each student."
+msgstr ""
+"Nombre de paiements proposé par défaut pour un nouvel élève. Il peut être "
+"modifié sur chaque élève."
+
+#. module: school_fees
+#. odoo-python
+#: model:ir.model.constraint,message:school_fees.constraint_res_company_school_default_installments_positive
+#: code:addons/school_fees/models/school_student.py:0
+msgid "The number of payments must be strictly positive."
+msgstr "Le nombre de paiements doit être strictement positif."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid ""
+"Product used on all the tuition invoices. It gives the income account and "
+"the taxes."
+msgstr ""
+"Produit utilisé sur toutes les factures de scolarité. Il fournit le compte "
+"de produits et les taxes."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid ""
+"Number of payments proposed for a new student. It can be changed on each "
+"student."
+msgstr ""
+"Nombre de paiements proposé pour un nouvel élève. Il peut être modifié sur "
+"chaque élève."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_student__fee_installments
+msgid "Number of Payments"
+msgstr "Nombre de paiements"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_student__fee_installments
+msgid ""
+"Number of payments chosen to pay the tuition of the school year. One invoice"
+" is created for each payment."
+msgstr ""
+"Nombre de paiements choisi pour régler la scolarité de l'année. Une facture "
+"est créée pour chaque paiement."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_level__fee_line_ids
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_level_form_fees
+msgid "Tuition Fees"
+msgstr "Frais de scolarité"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_student__payer_id
+msgid "Payer"
+msgstr "Payeur"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_student__payer_id
+msgid ""
+"Parent or guardian who pays the school fees. The invoices are addressed to "
+"this contact (or to the student contact when empty)."
+msgstr ""
+"Parent ou tuteur qui paie les frais de scolarité. Les factures sont "
+"adressées à ce contact (ou au contact de l'élève s'il est vide)."
+
+#. module: school_fees
+#. odoo-python
+#: model:ir.model.fields,field_description:school_fees.field_school_student__invoice_ids
+#: model:ir.model.fields,field_description:school_fees.field_school_student__invoice_count
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_student_form_fees
+#: model:ir.ui.menu,name:school_fees.menu_school_fee_invoices
+#: code:addons/school_fees/models/school_student.py:0
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_student__amount_due
+msgid "Amount Due"
+msgstr "Montant dû"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_student__amount_due
+msgid "Remaining amount to pay on the validated invoices."
+msgstr "Montant restant à payer sur les factures validées."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_student__amount_invoiced
+msgid "Total Invoiced"
+msgstr "Total facturé"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_student__amount_invoiced
+msgid "Total of the invoices of the student, including the draft ones."
+msgstr "Total des factures de l'élève, brouillons inclus."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_student_search_fees
+msgid "No Billing Contact"
+msgstr "Sans contact de facturation"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__student_id
+msgid "Student"
+msgstr "Élève"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_account_move__student_id
+msgid "Student concerned by this invoice (school fees)."
+msgstr "Élève concerné par cette facture (frais de scolarité)."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__fee_installment
+msgid "Installment"
+msgstr "Échéance"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_invoice_wizard__level_ids
+msgid "Levels"
+msgstr "Niveaux"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_fee_invoice_wizard__level_ids
+msgid "Leave empty to invoice all the levels."
+msgstr "Laissez vide pour facturer tous les niveaux."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_invoice_wizard__classroom_ids
+msgid "Classrooms"
+msgstr "Classes"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_fee_invoice_wizard__classroom_ids
+msgid "Leave empty to invoice all the classrooms."
+msgstr "Laissez vide pour facturer toutes les classes."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_school_fee_invoice_wizard__date_until
+msgid "Installments Due Until"
+msgstr "Échéances dues jusqu'au"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_school_fee_invoice_wizard__date_until
+msgid ""
+"All the installments due until this date, and not invoiced yet, are "
+"invoiced."
+msgstr ""
+"Toutes les échéances dues jusqu'à cette date et pas encore facturées sont "
+"facturées."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_fee_invoice_wizard_form
+msgid ""
+"The invoices are created in draft: review them, then validate them to make "
+"them available to the parents."
+msgstr ""
+"Les factures sont créées en brouillon : vérifiez-les, puis validez-les pour "
+"les rendre disponibles aux parents."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_fee_invoice_wizard_form
+msgid "Generate"
+msgstr "Générer"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_fee_invoice_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: school_fees
+#: model:ir.actions.act_window,name:school_fees.action_school_fee_invoices
+msgid "Tuition Invoices"
+msgstr "Factures de scolarité"
+
+#. module: school_fees
+#: model_terms:ir.actions.act_window,help:school_fees.action_school_fee_invoices
+msgid "No tuition invoice yet"
+msgstr "Aucune facture de scolarité"
+
+#. module: school_fees
+#: model_terms:ir.actions.act_window,help:school_fees.action_school_fee_invoices
+msgid ""
+"Define the tuition fees on the school levels, then generate the invoices."
+msgstr ""
+"Définissez les frais de scolarité sur les niveaux, puis générez les "
+"factures."
+
+#. module: school_fees
+#: model:ir.ui.menu,name:school_fees.menu_school_fee_generate
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_student_form_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_school_student_list_fees
+msgid "Generate Invoices"
+msgstr "Générer les factures"
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_student.py:0
+#: code:addons/school_fees/wizard/school_fee_invoice_wizard.py:0
+msgid "Generated Invoices"
+msgstr "Factures générées"
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_fee_line.py:0
+msgid "%(fee)s - %(student)s (%(year)s) - %(number)s/%(total)s"
+msgstr "%(fee)s - %(student)s (%(year)s) - %(number)s/%(total)s"
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_fee_line.py:0
+msgid "Please select the tuition product in the school settings."
+msgstr ""
+"Veuillez sélectionner le produit de scolarité dans les paramètres de "
+"l'école."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_student.py:0
+msgid ""
+"The number of payments cannot exceed the number of months of the school year"
+" (%s)."
+msgstr ""
+"Le nombre de paiements ne peut pas dépasser le nombre de mois de l'année "
+"scolaire (%s)."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_student.py:0
+msgid ""
+"The tuition of %s is already invoiced. Cancel the invoices before changing "
+"the number of payments."
+msgstr ""
+"La scolarité de %s est déjà facturée. Annulez les factures avant de modifier"
+" le nombre de paiements."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/wizard/school_fee_invoice_wizard.py:0
+msgid ""
+"There is no invoice to create. Check that the tuition fees are defined on "
+"the levels for this school year, and that the students have a payer or a "
+"contact."
+msgstr ""
+"Il n'y a aucune facture à créer. Vérifiez que les frais de scolarité sont "
+"définis sur les niveaux pour cette année scolaire et que les élèves ont un "
+"payeur ou un contact."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/school_student.py:0
+msgid ""
+"There is no invoice to create. Check that the tuition fees are defined on "
+"the level of the student for this school year, and that the student has a "
+"payer or a contact and is not already invoiced."
+msgstr ""
+"Il n'y a aucune facture à créer. Vérifiez que les frais de scolarité sont "
+"définis sur le niveau de l'élève pour cette année scolaire, que l'élève a un"
+" payeur ou un contact et qu'il n'est pas déjà facturé."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_reminder_enabled
+#: model:ir.model.fields,field_description:school_fees.field_res_config_settings__school_reminder_enabled
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+#: model:ir.actions.act_window,name:school_fees.action_school_fee_reminders
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Overdue Reminders"
+msgstr "Relances d'impayés"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.res_config_settings_view_form_school_fees
+msgid "Remind the payers of the unpaid tuition invoices by e-mail."
+msgstr "Relancer par e-mail les payeurs des factures de scolarité impayées."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_reminder_days
+#: model:ir.model.fields,field_description:school_fees.field_res_config_settings__school_reminder_days
+msgid "Days After Due Date"
+msgstr "Jours après l'échéance"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_reminder_days
+msgid ""
+"A tuition invoice is reminded when it is overdue for at least this number of "
+"days."
+msgstr ""
+"Une facture de scolarité est relancée lorsqu'elle est en retard depuis au "
+"moins ce nombre de jours."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_reminder_max
+#: model:ir.model.fields,field_description:school_fees.field_res_config_settings__school_reminder_max
+msgid "Number of Reminders"
+msgstr "Nombre de relances"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_reminder_max
+msgid "Maximum number of reminders sent for the same invoice."
+msgstr "Nombre maximum de relances envoyées pour une même facture."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_reminder_interval_days
+#: model:ir.model.fields,field_description:school_fees.field_res_config_settings__school_reminder_interval_days
+msgid "Days Between Reminders"
+msgstr "Jours entre deux relances"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_reminder_interval_days
+msgid "Minimum number of days between two reminders of the same invoice."
+msgstr "Nombre minimum de jours entre deux relances d'une même facture."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_res_company__school_reminder_auto
+#: model:ir.model.fields,field_description:school_fees.field_res_config_settings__school_reminder_auto
+msgid "Send Automatically"
+msgstr "Envoyer automatiquement"
+
+#. module: school_fees
+#: model:ir.model.fields,help:school_fees.field_res_company__school_reminder_auto
+msgid "The reminders are sent every day without any manual action."
+msgstr "Les relances sont envoyées chaque jour sans action manuelle."
+
+#. module: school_fees
+#: model:ir.model.constraint,message:school_fees.constraint_res_company_school_reminder_days_positive
+msgid "The number of days after the due date cannot be negative."
+msgstr "Le nombre de jours après l'échéance ne peut pas être négatif."
+
+#. module: school_fees
+#: model:ir.model.constraint,message:school_fees.constraint_res_company_school_reminder_max_positive
+msgid "The number of reminders must be strictly positive."
+msgstr "Le nombre de relances doit être strictement positif."
+
+#. module: school_fees
+#: model:ir.model.constraint,message:school_fees.constraint_res_company_school_reminder_interval_positive
+msgid "The number of days between two reminders must be strictly positive."
+msgstr "Le nombre de jours entre deux relances doit être strictement positif."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_reminder_count
+msgid "Reminders Sent"
+msgstr "Relances envoyées"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_reminder_last_date
+msgid "Last Reminder"
+msgstr "Dernière relance"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_reminder_max
+msgid "Max Reminders"
+msgstr "Relances max."
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_reminder_due
+msgid "To Remind"
+msgstr "À relancer"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_days_overdue
+msgid "Days Overdue"
+msgstr "Jours de retard"
+
+#. module: school_fees
+#: model:ir.model.fields,field_description:school_fees.field_account_move__school_partner_email
+msgid "Payer E-mail"
+msgstr "E-mail du payeur"
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/account_move.py:0
+msgid "The payer %(partner)s of invoice %(invoice)s has no e-mail address."
+msgstr "Le payeur %(partner)s de la facture %(invoice)s n'a pas d'adresse e-mail."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/account_move.py:0
+msgid "Send the Reminder"
+msgstr "Envoyer la relance"
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/account_move.py:0
+msgid "%s reminder(s) sent."
+msgstr "%s relance(s) envoyée(s)."
+
+#. module: school_fees
+#. odoo-python
+#: code:addons/school_fees/models/account_move.py:0
+msgid "%s invoice(s) skipped (payer without e-mail)."
+msgstr "%s facture(s) ignorée(s) (payeur sans e-mail)."
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Send All"
+msgstr "Tout envoyer"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Send the reminder of all the invoices of the list?"
+msgstr "Envoyer la relance de toutes les factures de la liste ?"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Send the reminder"
+msgstr "Envoyer la relance"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_list_school_reminder
+msgid "Total"
+msgstr "Total"
+
+#. module: school_fees
+#: model_terms:ir.ui.view,arch_db:school_fees.view_move_search_school_reminder
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: school_fees
+#: model:ir.ui.menu,name:school_fees.menu_school_fee_reminders
+msgid "Tuition Reminders"
+msgstr "Relances de scolarité"
+
+#. module: school_fees
+#: model_terms:ir.actions.act_window,help:school_fees.action_school_fee_reminders
+msgid "No invoice to remind"
+msgstr "Aucune facture à relancer"
+
+#. module: school_fees
+#: model_terms:ir.actions.act_window,help:school_fees.action_school_fee_reminders
+msgid ""
+"Enable the overdue reminders in the settings to list the unpaid tuition "
+"invoices."
+msgstr ""
+"Activez les relances d'impayés dans les paramètres pour lister les factures "
+"de scolarité impayées."
+
+#. module: school_fees
+#: model:ir.cron,cron_name:school_fees.ir_cron_school_fees_send_reminders
+msgid "School Fees: send the overdue reminders"
+msgstr "Frais de scolarité : envoyer les relances d'impayés"
+
+#. module: school_fees
+#: model:mail.template,name:school_fees.mail_template_school_fee_reminder
+msgid "School Fees: overdue reminder"
+msgstr "Frais de scolarité : relance d'impayé"
+
+#. module: school_fees
+#: model:mail.template,subject:school_fees.mail_template_school_fee_reminder
+msgid ""
+"{{ object.company_id.name }} - Payment reminder (Invoice {{ object.name }})"
+msgstr ""
+"{{ object.company_id.name }} - Rappel de paiement (Facture {{ object.name }})"
+
+#. module: school_fees
+#: model:mail.template,body_html:school_fees.mail_template_school_fee_reminder
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p>Dear <t t-out=\"object.partner_id.name or ''\">Parent</t>,</p>\n"
+"    <p>\n"
+"        Our records show that invoice <strong t-out=\"object.name or ''\">INV/2026/0001</strong>\n"
+"        <t t-if=\"object.student_id\">for <strong t-out=\"object.student_id.name\"/></t>\n"
+"        is still unpaid. It was due on <t t-out=\"object.invoice_date_due or ''\">2026-01-01</t>\n"
+"        (<t t-out=\"object.school_days_overdue\">5</t> days ago).\n"
+"    </p>\n"
+"    <p>\n"
+"        Amount due:\n"
+"        <strong t-out=\"object.amount_residual\" t-options=\"{'widget': 'monetary', 'display_currency': object.currency_id}\">100.00</strong>\n"
+"    </p>\n"
+"    <p>\n"
+"        Reminder <t t-out=\"object.school_reminder_count + 1\">1</t> of <t t-out=\"object.school_reminder_max\">3</t>.\n"
+"        If you have already paid, please ignore this message.\n"
+"    </p>\n"
+"    <p>Thank you,<br/><t t-out=\"object.company_id.name or ''\">School</t></p>\n"
+"</div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    <p>Bonjour <t t-out=\"object.partner_id.name or ''\">Parent</t>,</p>\n"
+"    <p>\n"
+"        Selon nos dossiers, la facture <strong t-out=\"object.name or ''\">INV/2026/0001</strong>\n"
+"        <t t-if=\"object.student_id\">de <strong t-out=\"object.student_id.name\"/></t>\n"
+"        est toujours impayée. Elle était due le <t t-out=\"object.invoice_date_due or ''\">2026-01-01</t>\n"
+"        (il y a <t t-out=\"object.school_days_overdue\">5</t> jours).\n"
+"    </p>\n"
+"    <p>\n"
+"        Montant dû :\n"
+"        <strong t-out=\"object.amount_residual\" t-options=\"{'widget': 'monetary', 'display_currency': object.currency_id}\">100.00</strong>\n"
+"    </p>\n"
+"    <p>\n"
+"        Relance <t t-out=\"object.school_reminder_count + 1\">1</t> sur <t t-out=\"object.school_reminder_max\">3</t>.\n"
+"        Si vous avez déjà payé, veuillez ignorer ce message.\n"
+"    </p>\n"
+"    <p>Merci,<br/><t t-out=\"object.company_id.name or ''\">School</t></p>\n"
+"</div>\n"
+"            "

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_student_list" model="ir.ui.view">
+        <field name="name">school.student.list</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <list string="Students" decoration-muted="state == 'left'">
+                <field name="matricule"/>
+                <field name="name"/>
+                <field name="level_id"/>
+                <field name="classroom_id"/>
+                <field name="academic_year"/>
+                <field name="average_grade" optional="show"/>
+                <field name="state" widget="badge" decoration-success="state == 'active'"
+                       decoration-info="state == 'graduated'" decoration-danger="state == 'left'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_school_student_kanban" model="ir.ui.view">
+        <field name="name">school.student.kanban</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                        <div class="text-muted"><field name="matricule"/></div>
+                                    </div>
+                                    <field name="photo" widget="image" class="o_kanban_image_fill_left"
+                                           options="{'size': [32, 32], 'round': true}"/>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <field name="level_id"/>
+                                    <span t-if="record.classroom_id.raw_value"> - <field name="classroom_id"/></span>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_school_student_form" model="ir.ui.view">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <header>
+                    <button name="action_print_report_card" string="Report Card" type="object"
+                            class="btn-primary" invisible="not id"/>
+                    <button name="action_graduate" string="Graduated" type="object"
+                            invisible="state != 'active'"/>
+                    <button name="action_leave" string="Left School" type="object"
+                            invisible="state != 'active'"/>
+                    <button name="action_reactivate" string="Reactivate" type="object"
+                            invisible="state == 'active'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,graduated"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_grades" type="object"
+                                class="oe_stat_button" icon="fa-pencil-square-o">
+                            <field name="grade_count" widget="statinfo" string="Grades"/>
+                        </button>
+                    </div>
+                    <field name="photo" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="Student full name"/>
+                        </h1>
+                        <div class="o_row">
+                            <field name="matricule"/>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Student Information">
+                            <field name="date_of_birth"/>
+                            <field name="age"/>
+                            <field name="place_of_birth"/>
+                            <field name="gender"/>
+                            <field name="nationality_id"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                        </group>
+                        <group string="Schooling">
+                            <field name="level_id"/>
+                            <field name="classroom_id"/>
+                            <field name="school_year_id" options="{'no_create': True}"/>
+                            <field name="average_grade"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Parent / Guardian">
+                            <field name="parent_name"/>
+                            <field name="parent_phone"/>
+                            <field name="parent_email"/>
+                        </group>
+                        <group string="Links">
+                            <field name="partner_id"/>
+                            <field name="user_id"/>
+                            <field name="admission_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Grades" name="grades">
+                            <field name="grade_ids">
+                                <list>
+                                    <field name="date"/>
+                                    <field name="academic_year"/>
+                                    <field name="period_id"/>
+                                    <field name="subject_id"/>
+                                    <field name="evaluation_type"/>
+                                    <field name="score"/>
+                                    <field name="max_score"/>
+                                    <field name="score_on_20"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_student_search" model="ir.ui.view">
+        <field name="name">school.student.search</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <search string="Search Students">
+                <field name="name"/>
+                <field name="matricule"/>
+                <field name="parent_name"/>
+                <field name="level_id"/>
+                <field name="classroom_id"/>
+                <filter string="Active" name="filter_active" domain="[('state', '=', 'active')]"/>
+                <filter string="Graduated" name="filter_graduated" domain="[('state', '=', 'graduated')]"/>
+                <filter string="Left" name="filter_left" domain="[('state', '=', 'left')]"/>
+                <separator/>
+                <filter string="Archived" name="filter_archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Level" name="group_level" context="{'group_by': 'level_id'}"/>
+                    <filter string="Classroom" name="group_classroom" context="{'group_by': 'classroom_id'}"/>
+                    <filter string="Academic Year" name="group_year" context="{'group_by': 'academic_year'}"/>
+                    <filter string="Status" name="group_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_school_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="context">{'search_default_filter_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smart_help">
+                Create a student
+            </p>
+            <p>
+                Students are also created automatically when an admission request is enrolled.
+            </p>
+        </field>
+    </record>
+
+</odoo>

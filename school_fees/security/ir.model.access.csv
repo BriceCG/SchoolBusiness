@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_school_fee_line_user,school.fee.line.user,model_school_fee_line,school_business_backend.group_school_admission_user,1,0,0,0
+access_school_fee_line_manager,school.fee.line.manager,model_school_fee_line,school_business_backend.group_school_admission_manager,1,1,1,1
+access_school_fee_invoice_wizard,school.fee.invoice.wizard,model_school_fee_invoice_wizard,school_business_backend.group_school_admission_manager,1,1,1,1

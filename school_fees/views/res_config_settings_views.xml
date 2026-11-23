@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_school_fees" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.school.fees</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="school_business_backend.res_config_settings_view_form_school"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='school_year_setting_container']" position="after">
+                <block title="Tuition" name="school_fees_setting_container">
+                    <setting id="school_fee_product_setting" string="Tuition Product"
+                             help="Product used on all the tuition invoices. It gives the income account and the taxes.">
+                        <field name="school_fee_product_id" options="{'no_create': True}"/>
+                    </setting>
+                    <setting id="school_default_installments_setting" string="Default Number of Payments"
+                             help="Number of payments proposed for a new student. It can be changed on each student.">
+                        <field name="school_default_installments"/>
+                    </setting>
+                </block>
+                <block title="Overdue Reminders" name="school_reminder_setting_container">
+                    <setting id="school_reminder_setting" string="Overdue Reminders"
+                             help="Remind the payers of the unpaid tuition invoices by e-mail.">
+                        <field name="school_reminder_enabled"/>
+                        <div class="content-group mt16" invisible="not school_reminder_enabled">
+                            <div class="row mt8">
+                                <label for="school_reminder_days" class="col-lg-5 o_light_label"/>
+                                <field name="school_reminder_days"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="school_reminder_max" class="col-lg-5 o_light_label"/>
+                                <field name="school_reminder_max"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="school_reminder_interval_days" class="col-lg-5 o_light_label"/>
+                                <field name="school_reminder_interval_days"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="school_reminder_auto" class="col-lg-5 o_light_label"/>
+                                <field name="school_reminder_auto"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

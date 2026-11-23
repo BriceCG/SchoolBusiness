@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_school_report_card" model="ir.actions.report">
+        <field name="name">Report Card</field>
+        <field name="model">school.grade.export.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_business_backend.report_school_report_card</field>
+        <field name="report_file">school_business_backend.report_school_report_card</field>
+        <field name="print_report_name">object._get_report_filename()</field>
+    </record>
+
+    <template id="report_school_report_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="student" t-value="doc.student_id"/>
+                <t t-call="web.external_layout">
+                    <t t-set="company" t-value="student.company_id"/>
+                    <div class="page">
+                        <h2 class="text-center mb-4">Report Card</h2>
+                        <table class="table table-sm table-borderless mb-4">
+                            <tr>
+                                <td class="fw-bold">Student:</td>
+                                <td><span t-field="student.name"/></td>
+                                <td class="fw-bold">Student Number:</td>
+                                <td><span t-field="student.matricule"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Level:</td>
+                                <td><span t-field="student.level_id.name"/></td>
+                                <td class="fw-bold">Classroom:</td>
+                                <td><span t-out="student.classroom_id.name or '-'"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">School Year:</td>
+                                <td><span t-field="doc.school_year_id.name"/></td>
+                                <td class="fw-bold">Date of Birth:</td>
+                                <td><span t-out="student.date_of_birth or '-'"/></td>
+                            </tr>
+                        </table>
+
+                        <t t-foreach="doc._get_report_data()" t-as="block">
+                            <h4 class="mt-4" t-out="block['period'].name"/>
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr class="table-light">
+                                        <th>Subject</th>
+                                        <th>Grades (/20)</th>
+                                        <th class="text-end">Coefficient</th>
+                                        <th class="text-end">Average (/20)</th>
+                                        <th class="text-end">Average x Coefficient</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="block['subjects']" t-as="line">
+                                        <td t-out="line['subject'].name"/>
+                                        <td>
+                                            <t t-foreach="line['grades']" t-as="grade">
+                                                <span t-out="'%.2f' % grade.score_on_20"/><t t-if="not grade_last">, </t>
+                                            </t>
+                                        </td>
+                                        <td class="text-end" t-out="'%.2f' % line['coefficient']"/>
+                                        <td class="text-end" t-out="'%.2f' % line['average']"/>
+                                        <td class="text-end" t-out="'%.2f' % line['weighted']"/>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="fw-bold table-light">
+                                        <td>Total</td>
+                                        <td/>
+                                        <td class="text-end" t-out="'%.2f' % block['total_coef']"/>
+                                        <td/>
+                                        <td class="text-end" t-out="'%.2f' % block['weighted_total']"/>
+                                    </tr>
+                                    <tr class="fw-bold table-light">
+                                        <td colspan="4">General average</td>
+                                        <td class="text-end" t-out="'%.2f' % block['average']"/>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </t>
+
+                        <div class="row mt-5">
+                            <div class="col-6 text-center">Parent / Guardian signature</div>
+                            <div class="col-6 text-center">School Director</div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

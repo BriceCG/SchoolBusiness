@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_admission_form_inherit_frontend" model="ir.ui.view">
+        <field name="name">school.admission.form.frontend</field>
+        <field name="model">school.admission</field>
+        <field name="inherit_id" ref="school_business_backend.view_school_admission_form"/>
+        <field name="arch" type="xml">
+            <button name="action_submit" position="after">
+                <button name="action_send_form_link" string="Send Form Link" type="object"
+                        invisible="state != 'draft'"/>
+            </button>
+        </field>
+    </record>
+
+</odoo>

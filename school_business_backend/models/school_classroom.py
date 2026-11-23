@@ -1,0 +1,50 @@
+from odoo import _, api, fields, models
+
+
+class SchoolClassroom(models.Model):
+    _name = 'school.classroom'
+    _description = "Classroom"
+    _order = 'level_id, name'
+
+    name = fields.Char(string="Classroom", required=True)
+    code = fields.Char(string="Code")
+    active = fields.Boolean(default=True)
+    company_id = fields.Many2one(
+        'res.company', string="Company", default=lambda self: self.env.company, required=True)
+    level_id = fields.Many2one('school.level', string="Level", required=True)
+    school_year_id = fields.Many2one(
+        'school.year', string="School Year", required=True, index=True,
+        default=lambda self: self.env.company.current_school_year_id,
+        domain="[('state', '=', 'open')]")
+    academic_year = fields.Char(
+        string="Academic Year", related='school_year_id.name', store=True)
+    capacity = fields.Integer(string="Capacity", default=30, required=True)
+    location = fields.Char(string="Location", help="Building, floor, room number...")
+    student_ids = fields.One2many('school.student', 'classroom_id', string="Students")
+    student_count = fields.Integer(string="Students", compute='_compute_student_count')
+    available_seats = fields.Integer(string="Available Seats", compute='_compute_student_count')
+    notes = fields.Text(string="Notes")
+
+    _sql_constraints = [
+        ('capacity_positive', 'check(capacity > 0)', "The capacity must be strictly positive."),
+        ('name_year_company_unique', 'unique(name, academic_year, company_id)',
+         "A classroom with this name already exists for this academic year."),
+    ]
+
+    @api.depends('student_ids', 'student_ids.state', 'capacity')
+    def _compute_student_count(self):
+        for room in self:
+            count = len(room.student_ids.filtered(lambda s: s.state == 'active'))
+            room.student_count = count
+            room.available_seats = room.capacity - count
+
+    def action_view_students(self):
+        self.ensure_one()
+        return {
+            'name': _("Students"),
+            'type': 'ir.actions.act_window',
+            'res_model': 'school.student',
+            'view_mode': 'list,form',
+            'domain': [('classroom_id', '=', self.id)],
+            'context': {'default_classroom_id': self.id, 'default_level_id': self.level_id.id},
+        }

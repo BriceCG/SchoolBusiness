@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_student_form_fees" model="ir.ui.view">
+        <field name="name">school.student.form.fees</field>
+        <field name="model">school.student</field>
+        <field name="inherit_id" ref="school_business_backend.view_school_student_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_generate_invoices" type="object" string="Generate Invoices"
+                        invisible="state != 'active'"
+                        groups="school_business_backend.group_school_admission_manager"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_invoices" type="object"
+                        class="oe_stat_button" icon="fa-money">
+                    <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                </button>
+            </xpath>
+            <field name="partner_id" position="after">
+                <field name="payer_id"/>
+                <field name="fee_installments"/>
+                <field name="amount_invoiced" widget="monetary"/>
+                <field name="amount_due" widget="monetary"/>
+                <field name="currency_id" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_school_student_list_fees" model="ir.ui.view">
+        <field name="name">school.student.list.fees</field>
+        <field name="model">school.student</field>
+        <field name="inherit_id" ref="school_business_backend.view_school_student_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list/field[1]" position="before">
+                <header>
+                    <button name="action_generate_invoices" type="object"
+                            string="Generate Invoices"
+                            groups="school_business_backend.group_school_admission_manager"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_school_student_search_fees" model="ir.ui.view">
+        <field name="name">school.student.search.fees</field>
+        <field name="model">school.student</field>
+        <field name="inherit_id" ref="school_business_backend.view_school_student_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter string="No Billing Contact" name="filter_no_payer"
+                        domain="[('payer_id', '=', False), ('partner_id', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

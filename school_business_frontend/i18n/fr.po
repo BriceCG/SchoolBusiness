@@ -1,0 +1,425 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#    * school_business_frontend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0
+"
+"Report-Msgid-Bugs-To: 
+"
+"Content-Type: text/plain; charset=UTF-8
+"
+"Plural-Forms: 
+"
+"Language: fr
+"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "%(label)s: allowed formats are %(formats)s."
+msgstr "%(label)s : les formats autorisés sont %(formats)s."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "%s is empty."
+msgstr "%s est vide."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "%(label)s is too large (maximum %(size)s MB)."
+msgstr "%(label)s est trop volumineux (maximum %(size)s Mo)."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Student name"
+msgstr "Nom de l'élève"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Student email"
+msgstr "E-mail de l'élève"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Date of birth"
+msgstr "Date de naissance"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Requested level"
+msgstr "Niveau demandé"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Academic year"
+msgstr "Année scolaire"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Parent/Guardian name"
+msgstr "Nom du parent/tuteur"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Parent phone"
+msgstr "Téléphone du parent"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "%s is required."
+msgstr "%s est obligatoire."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse e-mail valide."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "An admission request already exists for this email address."
+msgstr "Une demande d'admission existe déjà pour cette adresse e-mail."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Please enter a valid date."
+msgstr "Veuillez saisir une date valide."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "The date of birth must be in the past."
+msgstr "La date de naissance doit être dans le passé."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Please select a valid level."
+msgstr "Veuillez sélectionner un niveau valide."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Your request could not be registered. Please check your information."
+msgstr "Votre demande n'a pas pu être enregistrée. Veuillez vérifier vos informations."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Please attach the application document."
+msgstr "Veuillez joindre le document de candidature."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Photo"
+msgstr "Photo"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Application document"
+msgstr "Document de candidature"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "-"
+msgstr "-"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Academic Year *"
+msgstr "Année scolaire *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Academic year:"
+msgstr "Année scolaire :"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Admission Request"
+msgstr "Demande d'admission"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "Application Document"
+msgstr "Document de candidature"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "Application Document *"
+msgstr "Document de candidature *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Back to Home"
+msgstr "Retour à l'accueil"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "City"
+msgstr "Ville"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Continue"
+msgstr "Continuer"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Country"
+msgstr "Pays"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Date of Birth *"
+msgstr "Date de naissance *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Father"
+msgstr "Père"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Female"
+msgstr "Féminin"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Gender"
+msgstr "Genre"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Legal Guardian"
+msgstr "Tuteur légal"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Level:"
+msgstr "Niveau :"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Male"
+msgstr "Masculin"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Mother"
+msgstr "Mère"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Nationality"
+msgstr "Nationalité"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Our admissions team will review your file and contact you for the next steps."
+msgstr "Notre équipe des admissions étudiera votre dossier et vous contactera pour les prochaines étapes."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "PDF, JPG or PNG, 10 MB maximum."
+msgstr "PDF, JPG ou PNG, 10 Mo maximum."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Parent / Guardian"
+msgstr "Parent / Tuteur"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Parent Email"
+msgstr "E-mail du parent"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Parent Phone *"
+msgstr "Téléphone du parent *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Parent/Guardian Name *"
+msgstr "Nom du parent/tuteur *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Place of Birth"
+msgstr "Lieu de naissance"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Previous Level"
+msgstr "Niveau précédent"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Previous School"
+msgstr "École précédente"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Reference:"
+msgstr "Référence :"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Relationship"
+msgstr "Lien de parenté"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Requested Level *"
+msgstr "Niveau demandé *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Requested Schooling"
+msgstr "Scolarité demandée"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "State"
+msgstr "Région"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Step 1 of 2 - Fill in the admission information. You will then be asked to upload your application document."
+msgstr "Étape 1 sur 2 - Renseignez les informations d'admission. Il vous sera ensuite demandé de téléverser votre document de candidature."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "Step 2 of 2 - Attach your application document to submit your request."
+msgstr "Étape 2 sur 2 - Joignez votre document de candidature pour soumettre votre demande."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Street"
+msgstr "Rue"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Street 2"
+msgstr "Rue 2"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Student Email *"
+msgstr "E-mail de l'élève *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Student Information"
+msgstr "Informations sur l'élève"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Student Name *"
+msgstr "Nom de l'élève *"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "Student:"
+msgstr "Élève :"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "Submit Application"
+msgstr "Soumettre la candidature"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Thank you!"
+msgstr "Merci !"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+msgid "Your admission request has been submitted."
+msgstr "Votre demande d'admission a été soumise."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.view_school_admission_form_inherit_frontend
+msgid "Send Form Link"
+msgstr "Envoyer le lien du formulaire"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Complete my admission request"
+msgstr "Compléter ma demande d'admission"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Admission Request %(ref)s: Please Complete Your File"
+msgstr "Demande d'admission %(ref)s : veuillez compléter votre dossier"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Dear %(student)s,"
+msgstr "Cher(e) %(student)s,"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Please follow the link below to complete your admission request %(ref)s and upload your application document."
+msgstr "Veuillez suivre le lien ci-dessous pour compléter votre demande d'admission %(ref)s et téléverser votre document de candidature."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Best regards,"
+msgstr "Cordialement,"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "The form link can only be sent for a new admission request."
+msgstr "Le lien du formulaire ne peut être envoyé que pour une demande d'admission nouvelle."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "Please set the student email on admission request %(ref)s before sending the link."
+msgstr "Veuillez renseigner l'e-mail de l'élève sur la demande d'admission %(ref)s avant d'envoyer le lien."
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/models/school_admission.py:0
+msgid "The form link has been sent."
+msgstr "Le lien du formulaire a été envoyé."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
+msgid "A document is already attached. Upload a new one only to replace it."
+msgstr "Un document est déjà joint. Téléversez-en un nouveau uniquement pour le remplacer."

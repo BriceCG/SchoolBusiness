@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_classroom_list" model="ir.ui.view">
+        <field name="name">school.classroom.list</field>
+        <field name="model">school.classroom</field>
+        <field name="arch" type="xml">
+            <list string="Classrooms">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="level_id"/>
+                <field name="academic_year"/>
+                <field name="location" optional="show"/>
+                <field name="capacity"/>
+                <field name="student_count"/>
+                <field name="available_seats"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_school_classroom_form" model="ir.ui.view">
+        <field name="name">school.classroom.form</field>
+        <field name="model">school.classroom</field>
+        <field name="arch" type="xml">
+            <form string="Classroom">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_students" type="object"
+                                class="oe_stat_button" icon="fa-users">
+                            <field name="student_count" widget="statinfo" string="Students"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. 6th Grade A"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="level_id"/>
+                            <field name="school_year_id" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <field name="location"/>
+                            <field name="capacity"/>
+                            <field name="available_seats"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Students" name="students">
+                            <field name="student_ids" readonly="1">
+                                <list>
+                                    <field name="matricule"/>
+                                    <field name="name"/>
+                                    <field name="gender"/>
+                                    <field name="age"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_classroom_search" model="ir.ui.view">
+        <field name="name">school.classroom.search</field>
+        <field name="model">school.classroom</field>
+        <field name="arch" type="xml">
+            <search string="Search Classrooms">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="level_id"/>
+                <field name="academic_year"/>
+                <filter string="Archived" name="filter_archived" domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Level" name="group_level" context="{'group_by': 'level_id'}"/>
+                    <filter string="Academic Year" name="group_year" context="{'group_by': 'academic_year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_school_classroom" model="ir.actions.act_window">
+        <field name="name">Classrooms</field>
+        <field name="res_model">school.classroom</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smart_help">
+                Create a classroom
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,1635 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#    * school_business_backend
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__accepted
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Accepted"
+msgstr "Admis"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__academic_year
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__academic_year
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__academic_year
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__academic_year
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Academic Year"
+msgstr "Année scolaire"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__application_document
+msgid "Application Document"
+msgstr "Document de candidature"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__application_document_filename
+msgid "Application Document Filename"
+msgstr "Nom du fichier du document de candidature"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_level__active
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__active
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__state__active
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Active"
+msgstr "Actif"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Admission"
+msgstr "Admission"
+
+#. module: school_business_backend
+#: model:res.groups,name:school_business_backend.group_school_admission_manager
+msgid "Admission Manager"
+msgstr "Responsable des admissions"
+
+#. module: school_business_backend
+#: model:res.groups,name:school_business_backend.group_school_admission_user
+msgid "Admission Officer"
+msgstr "Agent d'admission"
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_admission
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__admission_id
+#: model:ir.sequence,name:school_business_backend.seq_school_admission
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__admission_id
+msgid "Admission Request"
+msgstr "Demande d'admission"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_level.py:0
+#: model:ir.actions.act_window,name:school_business_backend.action_school_admission
+#: model:ir.model.fields,field_description:school_business_backend.field_school_level__admission_count
+#: model:ir.ui.menu,name:school_business_backend.menu_school_admission
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_list
+msgid "Admission Requests"
+msgstr "Demandes d'admission"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__age
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__age
+msgid "Age"
+msgstr "Âge"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__application_date
+msgid "Application Date"
+msgstr "Date de la demande"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__submitted
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Application Submitted"
+msgstr "Dossier soumis"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__company_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__partner_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__partner_id
+msgid "Contact"
+msgstr "Contact"
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_schedule_wizard_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_schedule_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_admission
+msgid "Create a new admission request"
+msgstr "Créez une nouvelle demande d'admission"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_level
+msgid "Create a school level (e.g. Grade 1, Grade 6, Grade 12...)"
+msgstr "Créez un niveau scolaire (ex. Grade 1, Grade 6, Grade 12...)"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__date_of_birth
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__date_of_birth
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_level__description
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_form
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__description
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
+msgid "Description"
+msgstr "Description"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Documents"
+msgstr "Documents"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_form
+msgid "e.g. Grade 6"
+msgstr "p. ex. Grade 6"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Enroll"
+msgstr "Inscrire"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__enrolled
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Enrolled"
+msgstr "Inscrit"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__exam
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission_schedule_wizard__wizard_type__exam
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Entrance Exam"
+msgstr "Test d'admission"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__exam_date
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__exam_date
+msgid "Entrance Exam Date"
+msgstr "Date du test d'admission"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__exam_score
+msgid "Exam Score"
+msgstr "Note du test"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__parent_relationship__father
+msgid "Father"
+msgstr "Père"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__gender__female
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__gender__female
+msgid "Female"
+msgstr "Féminin"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__gender
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__gender
+msgid "Gender"
+msgstr "Sexe"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__interview
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission_schedule_wizard__wizard_type__interview
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Interview"
+msgstr "Entretien"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Interview / Exam"
+msgstr "Entretien / Test"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__interview_date
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__interview_date
+msgid "Interview Date"
+msgstr "Date d'entretien"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__notes
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Internal Notes"
+msgstr "Notes internes"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__parent_relationship__guardian
+msgid "Legal Guardian"
+msgstr "Tuteur légal"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_level__name
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__level_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__level_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Level"
+msgstr "Niveau"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__gender__male
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__gender__male
+msgid "Male"
+msgstr "Masculin"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__parent_relationship__mother
+msgid "Mother"
+msgstr "Mère"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "My Requests"
+msgstr "Mes demandes"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__nationality_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__nationality_id
+msgid "Nationality"
+msgstr "Nationalité"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__draft
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "New"
+msgstr "Nouveau"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Notes about this file..."
+msgstr "Notes sur ce dossier..."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Parent / Guardian"
+msgstr "Parent / Tuteur"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__parent_email
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__parent_email
+msgid "Parent Email"
+msgstr "Email du parent"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__parent_phone
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__parent_phone
+msgid "Parent Phone"
+msgstr "Téléphone du parent"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__parent_name
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__parent_name
+msgid "Parent/Guardian Name"
+msgstr "Nom du parent/tuteur"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__photo
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__photo
+msgid "Photo"
+msgstr "Photo"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid ""
+"You cannot delete the admission request %(ref)s because it is already "
+"accepted or enrolled."
+msgstr ""
+"Vous ne pouvez pas supprimer la demande d'admission %(ref)s car elle est "
+"déjà acceptée ou inscrite."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Please attach the application document before submitting the file."
+msgstr "Veuillez joindre le document de candidature avant de soumettre le dossier."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__place_of_birth
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__place_of_birth
+msgid "Place of Birth"
+msgstr "Lieu de naissance"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__previous_level
+msgid "Previous Level"
+msgstr "Dernière classe suivie"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__previous_school
+msgid "Previous School"
+msgstr "École précédente"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Previous Schooling"
+msgstr "Scolarité précédente"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Required before the application can be submitted."
+msgstr "Obligatoire pour pouvoir soumettre le dossier."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__refusal_reason
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Refusal Reason"
+msgstr "Motif de refus"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Refuse"
+msgstr "Refuser"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_admission__state__refused
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Refused"
+msgstr "Refusé"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__level_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Requested Level"
+msgstr "Niveau demandé"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_list
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_form
+msgid "Requests"
+msgstr "Demandes"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Reset to New"
+msgstr "Réinitialiser"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__responsible_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Schedule Exam"
+msgstr "Planifier le test"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Schedule Interview"
+msgstr "Planifier l'entretien"
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_admission_schedule_wizard
+msgid "Schedule Admission Step Wizard"
+msgstr "Assistant de planification d'une étape d'admission"
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_level
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_form
+msgid "School Level"
+msgstr "Niveau scolaire"
+
+#. module: school_business_backend
+#: model:ir.actions.act_window,name:school_business_backend.action_school_level
+#: model:ir.ui.menu,name:school_business_backend.menu_school_level
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_level_list
+msgid "School Levels"
+msgstr "Niveaux scolaires"
+
+#. module: school_business_backend
+#: model:ir.module.category,name:school_business_backend.module_category_school
+msgid "School Management"
+msgstr "Gestion scolaire"
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_root
+msgid "School Admissions"
+msgstr "Admissions scolaires"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Search Admission Requests"
+msgstr "Rechercher une demande d'admission"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_level__sequence
+#: model:ir.model.fields,field_description:school_business_backend.field_school_period__sequence
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__state
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_search
+msgid "Stage"
+msgstr "Étape"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__state_id
+msgid "State"
+msgstr "État"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__street
+msgid "Street"
+msgstr "Rue"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__street2
+msgid "Street2"
+msgstr "Rue 2"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__student_email
+msgid "Student Email"
+msgstr "Email de l'élève"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Student full name"
+msgstr "Nom complet de l'élève"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Student Information"
+msgstr "Informations sur l'élève"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__student_name
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__student_name
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__name
+msgid "Student Name"
+msgstr "Nom de l'élève"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_form
+msgid "Submit Application"
+msgstr "Soumettre le dossier"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_admission
+msgid "Track each candidate from the initial application to final enrollment."
+msgstr "Suivez chaque candidat depuis le dépôt de sa demande jusqu'à son inscription définitive."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__wizard_type
+msgid "Type"
+msgstr "Type"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_admission_wizard.py:0
+msgid "Please enter the interview date."
+msgstr "Veuillez saisir la date d'entretien."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_admission_wizard.py:0
+msgid "Please enter the exam date."
+msgstr "Veuillez saisir la date du test."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__zip
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_prek
+msgid "Pre-Kindergarten"
+msgstr "Pré-maternelle"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_kg
+msgid "Kindergarten"
+msgstr "Maternelle"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_1
+msgid "Grade 1"
+msgstr "1re année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_2
+msgid "Grade 2"
+msgstr "2e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_3
+msgid "Grade 3"
+msgstr "3e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_4
+msgid "Grade 4"
+msgstr "4e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_5
+msgid "Grade 5"
+msgstr "5e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_6
+msgid "Grade 6"
+msgstr "6e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_7
+msgid "Grade 7"
+msgstr "7e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_8
+msgid "Grade 8"
+msgstr "8e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_9
+msgid "Grade 9"
+msgstr "9e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_10
+msgid "Grade 10"
+msgstr "10e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_11
+msgid "Grade 11"
+msgstr "11e année"
+
+#. module: school_business_backend
+#: model:school.level,name:school_business_backend.school_level_grade_12
+msgid "Grade 12"
+msgstr "12e année"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Admission Request %(ref)s Received"
+msgstr "Demande d'admission %(ref)s reçue"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Dear %(student)s,"
+msgstr "Bonjour %(student)s,"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "We confirm that your admission request %(ref)s for %(level)s (%(year)s) has been successfully received."
+msgstr "Nous vous confirmons que votre demande d'admission %(ref)s pour %(level)s (%(year)s) a bien été reçue."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Our admissions team will review your file and contact you for the next steps."
+msgstr "Notre équipe d'admission va étudier votre dossier et reviendra vers vous pour la suite."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Best regards,"
+msgstr "Cordialement,"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__interview_start_time
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__interview_start_time
+msgid "Interview Start Time"
+msgstr "Heure de début de l'entretien"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__interview_end_time
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__interview_end_time
+msgid "Interview End Time"
+msgstr "Heure de fin de l'entretien"
+
+#. module: school_business_backend
+#: model:mail.activity.type,name:school_business_backend.mail_activity_type_interview
+msgid "Admission Interview"
+msgstr "Entretien d'admission"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_admission_wizard.py:0
+msgid "Please enter the interview start and end time."
+msgstr "Veuillez saisir les heures de début et de fin de l'entretien."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Interview with %(student)s"
+msgstr "Entretien avec %(student)s"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Interview scheduled on %(date)s from %(start)s to %(end)s for admission request %(ref)s."
+msgstr "Entretien prévu le %(date)s de %(start)s à %(end)s pour la demande d'admission %(ref)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Interview Scheduled: %(ref)s"
+msgstr "Entretien planifié : %(ref)s"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Your interview for admission request %(ref)s is scheduled on %(date)s from %(start)s to %(end)s."
+msgstr "Votre entretien pour la demande d'admission %(ref)s est prévu le %(date)s de %(start)s à %(end)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Please arrive a few minutes before the scheduled time."
+msgstr "Merci de vous présenter quelques minutes avant l'heure prévue."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__exam_start_time
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__exam_start_time
+msgid "Exam Start Time"
+msgstr "Heure de début du test"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__exam_end_time
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission_schedule_wizard__exam_end_time
+msgid "Exam End Time"
+msgstr "Heure de fin du test"
+
+#. module: school_business_backend
+#: model:mail.activity.type,name:school_business_backend.mail_activity_type_exam
+msgid "Admission Entrance Exam"
+msgstr "Examen d'admission"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_admission_wizard.py:0
+msgid "Please enter the exam start and end time."
+msgstr "Veuillez saisir les heures de début et de fin du test."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Entrance exam with %(student)s"
+msgstr "Test d'admission avec %(student)s"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Entrance exam scheduled on %(date)s from %(start)s to %(end)s for admission request %(ref)s."
+msgstr "Test d'admission prévu le %(date)s de %(start)s à %(end)s pour la demande d'admission %(ref)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Entrance Exam Scheduled: %(ref)s"
+msgstr "Test d'admission planifié : %(ref)s"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Your entrance exam for admission request %(ref)s is scheduled on %(date)s from %(start)s to %(end)s."
+msgstr "Votre test d'admission pour la demande d'admission %(ref)s est prévu le %(date)s de %(start)s à %(end)s."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Admission Request %(ref)s Accepted"
+msgstr "Demande d'admission %(ref)s acceptée"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "We are pleased to inform you that your admission request %(ref)s for %(level)s (%(year)s) has been accepted."
+msgstr "Nous avons le plaisir de vous informer que votre demande d'admission %(ref)s pour %(level)s (%(year)s) a été acceptée."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Please contact our admissions team to finalize your enrollment."
+msgstr "Veuillez contacter notre équipe d'admission pour finaliser votre inscription."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Admission Request %(ref)s Update"
+msgstr "Demande d'admission %(ref)s : mise à jour"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "We regret to inform you that your admission request %(ref)s for %(level)s (%(year)s) has not been accepted."
+msgstr "Nous sommes au regret de vous informer que votre demande d'admission %(ref)s pour %(level)s (%(year)s) n'a pas été retenue."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/models/school_admission.py:0
+msgid "Please contact our admissions team if you have any questions."
+msgstr "N'hésitez pas à contacter notre équipe d'admission pour toute question."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "School"
+msgstr "École"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+#: model:ir.actions.act_window,name:school_business_backend.action_school_grade
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__grade_count
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__grade_ids
+#: model:ir.ui.menu,name:school_business_backend.menu_school_grade
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_list
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Grades"
+msgstr "Notes"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+#: model:ir.model.fields,field_description:school_business_backend.field_res_company__school_period_type
+msgid "Grading Periods"
+msgstr "Périodes d'évaluation"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "Choose how the school year is divided to record the grades."
+msgstr "Choisissez comment l'année scolaire est découpée pour saisir les notes."
+
+#. module: school_business_backend
+#: model:ir.ui.menu,name:school_business_backend.menu_school_settings
+#: model:ir.actions.act_window,name:school_business_backend.action_school_config_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__res_company__school_period_type__term
+msgid "Term (3 per year)"
+msgstr "Trimestre (3 par an)"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__res_company__school_period_type__semester
+msgid "Semester (2 per year)"
+msgstr "Semestre (2 par an)"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__res_company__school_period_type__bimester
+msgid "Bimester (6 per year)"
+msgstr "Bimestre (6 par an, 2 mois chacun)"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__period_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_period__name
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Period"
+msgstr "Période"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__period_type
+#: model:ir.model.fields,field_description:school_business_backend.field_school_period__period_type
+msgid "Period Type"
+msgstr "Type de période"
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_period
+msgid "Grading Period"
+msgstr "Période d'évaluation"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_term_1
+msgid "Term 1"
+msgstr "Trimestre 1"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_term_2
+msgid "Term 2"
+msgstr "Trimestre 2"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_term_3
+msgid "Term 3"
+msgstr "Trimestre 3"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_semester_1
+msgid "Semester 1"
+msgstr "Semestre 1"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_semester_2
+msgid "Semester 2"
+msgstr "Semestre 2"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_1
+msgid "Bimester 1"
+msgstr "Bimestre 1"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_2
+msgid "Bimester 2"
+msgstr "Bimestre 2"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_3
+msgid "Bimester 3"
+msgstr "Bimestre 3"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_4
+msgid "Bimester 4"
+msgstr "Bimestre 4"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_5
+msgid "Bimester 5"
+msgstr "Bimestre 5"
+
+#. module: school_business_backend
+#: model:school.period,name:school_business_backend.period_bimester_6
+msgid "Bimester 6"
+msgstr "Bimestre 6"
+
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_period_name_type_unique
+msgid "This period already exists for this period type."
+msgstr "Cette période existe déjà pour ce type de période."
+
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_res_company__school_period_type
+msgid "How the school year is divided to record the grades: terms (3 periods of 3 months), semesters (2 periods of 6 months) or bimesters (6 periods of 2 months)."
+msgstr "Découpage de l'année scolaire pour saisir les notes : trimestres (3 périodes de 3 mois), semestres (2 périodes de 6 mois) ou bimestres (6 périodes de 2 mois)."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__partner_is_existing
+msgid "Linked to Existing Contact"
+msgstr "Lié à un contact existant"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_admission__partner_is_existing
+msgid "The contact was already in the database, so it is not updated from this request."
+msgstr "Le contact existait déjà dans la base ; il n'est donc pas mis à jour à partir de cette demande."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__user_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__user_id
+msgid "Portal User"
+msgstr "Utilisateur du portail"
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_student
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__student_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__student_id
+#: model:ir.sequence,name:school_business_backend.seq_school_student
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Student"
+msgstr "Élève"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__city
+msgid "City"
+msgstr "Ville"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__parent_relationship
+msgid "Relationship"
+msgstr "Lien de parenté"
+
+#. module: school_business_backend
+msgid "The email %(email)s is already used by admission request %(ref)s."
+msgstr "L'e-mail %(email)s est déjà utilisé par la demande d'admission %(ref)s."
+
+#. module: school_business_backend
+msgid "Please set the student email before enrolling: it is used as portal login."
+msgstr "Veuillez renseigner l'e-mail de l'élève avant l'inscription : il sert d'identifiant du portail."
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_classroom
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__name
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__classroom_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__classroom_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Classroom"
+msgstr "Salle de classe"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__code
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__code
+msgid "Code"
+msgstr "Code"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__capacity
+msgid "Capacity"
+msgstr "Capacité"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__location
+msgid "Location"
+msgstr "Emplacement"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_classroom__location
+msgid "Building, floor, room number..."
+msgstr "Bâtiment, étage, numéro de salle..."
+
+#. module: school_business_backend
+#: model:ir.actions.act_window,name:school_business_backend.action_school_student
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__student_count
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__student_ids
+#: model:ir.ui.menu,name:school_business_backend.menu_school_student
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_list
+msgid "Students"
+msgstr "Élèves"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__available_seats
+msgid "Available Seats"
+msgstr "Places disponibles"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__notes
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_classroom_capacity_positive
+msgid "The capacity must be strictly positive."
+msgstr "La capacité doit être strictement positive."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_classroom_name_year_company_unique
+msgid "A classroom with this name already exists for this academic year."
+msgstr "Une salle de classe portant ce nom existe déjà pour cette année scolaire."
+
+#. module: school_business_backend
+#: model:ir.model,name:school_business_backend.model_school_grade
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_form
+msgid "Grade"
+msgstr "Note"
+
+#. module: school_business_backend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: model:ir.model,name:school_business_backend.model_school_subject
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__subject_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__name
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Subject"
+msgstr "Matière"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__evaluation_type
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Evaluation"
+msgstr "Évaluation"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade__evaluation_type__test
+msgid "Test"
+msgstr "Contrôle"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade__evaluation_type__homework
+msgid "Homework"
+msgstr "Devoir"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade__evaluation_type__exam
+msgid "Exam"
+msgstr "Examen"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade__evaluation_type__oral
+msgid "Oral"
+msgstr "Oral"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__date
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Date"
+msgstr "Date"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__score
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Score"
+msgstr "Note obtenue"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__max_score
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Out of"
+msgstr "Sur"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__score_on_20
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Score (/20)"
+msgstr "Note (/20)"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__teacher_id
+msgid "Teacher"
+msgstr "Enseignant"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade__comment
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_form
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_grade_max_score_positive
+msgid "The maximum score must be strictly positive."
+msgstr "La note maximale doit être strictement positive."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_grade_score_positive
+msgid "The score cannot be negative."
+msgstr "La note ne peut pas être négative."
+
+#. module: school_business_backend
+msgid "The score cannot be higher than the maximum score."
+msgstr "La note ne peut pas être supérieure à la note maximale."
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__matricule
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Student Number"
+msgstr "Matricule"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__state
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__state
+msgid "Status"
+msgstr "Statut"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__state__graduated
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Graduated"
+msgstr "Diplômé"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_student__state__left
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Left"
+msgstr "Parti"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__average_grade
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Average (/20)"
+msgstr "Moyenne (/20)"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_student__average_grade
+msgid "Average of the grades of the current academic year, on a scale of 20 and weighted by the coefficient of each subject."
+msgstr "Moyenne des notes de l'année scolaire en cours, sur 20 et pondérée par le coefficient de chaque matière."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_student_matricule_unique
+msgid "The student number must be unique."
+msgstr "Le matricule doit être unique."
+
+#. module: school_business_backend
+msgid "The classroom %(room)s belongs to the level %(room_level)s, not %(level)s."
+msgstr "La salle de classe %(room)s appartient au niveau %(room_level)s et non au niveau %(level)s."
+
+#. module: school_business_backend
+msgid "The classroom %(room)s is full (capacity: %(capacity)s)."
+msgstr "La salle de classe %(room)s est pleine (capacité : %(capacity)s)."
+
+#. module: school_business_backend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__coefficient
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Coefficient"
+msgstr "Coefficient"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_subject__coefficient
+msgid "Weight of the subject in the student average."
+msgstr "Poids de la matière dans la moyenne de l'élève."
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_subject__level_ids
+msgid "Levels"
+msgstr "Niveaux"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_subject__level_ids
+msgid "Levels in which this subject is taught."
+msgstr "Niveaux dans lesquels cette matière est enseignée."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_subject_code_unique
+msgid "The subject code must be unique."
+msgstr "Le code de la matière doit être unique."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_subject_coefficient_positive
+msgid "The coefficient must be strictly positive."
+msgstr "Le coefficient doit être strictement positif."
+
+#. module: school_business_backend
+#: model:ir.module.category,description:school_business_backend.module_category_school
+msgid "Manage school admission requests"
+msgstr "Gérer les demandes d'admission de l'école"
+
+#. module: school_business_backend
+#: model:ir.rule,name:school_business_backend.school_admission_company_rule
+msgid "Admission Request: multi-company"
+msgstr "Demande d'admission : multi-sociétés"
+
+#. module: school_business_backend
+#: model:ir.rule,name:school_business_backend.school_student_company_rule
+msgid "Student: multi-company"
+msgstr "Élève : multi-sociétés"
+
+#. module: school_business_backend
+#: model:ir.rule,name:school_business_backend.school_classroom_company_rule
+msgid "Classroom: multi-company"
+msgstr "Salle de classe : multi-sociétés"
+
+#. module: school_business_backend
+#: model:ir.rule,name:school_business_backend.school_grade_company_rule
+msgid "Grade: multi-company"
+msgstr "Note : multi-sociétés"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_admission_kanban
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_kanban
+msgid "-"
+msgstr "-"
+
+#. module: school_business_backend
+#: model:ir.actions.act_window,name:school_business_backend.action_school_classroom
+#: model:ir.ui.menu,name:school_business_backend.menu_school_classroom
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_list
+msgid "Classrooms"
+msgstr "Salles de classe"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_search
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_form
+msgid "e.g. 6th Grade A"
+msgstr "ex. 6ème A"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_classroom_search
+msgid "Search Classrooms"
+msgstr "Rechercher des salles de classe"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_classroom
+msgid "Create a classroom"
+msgstr "Créer une salle de classe"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_form
+msgid "Result"
+msgstr "Résultat"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+msgid "Search Grades"
+msgstr "Rechercher des notes"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_search
+msgid "My Grades"
+msgstr "Mes notes"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_grade
+msgid "Record a grade"
+msgstr "Enregistrer une note"
+
+#. module: school_business_backend
+#: model:ir.actions.act_window,name:school_business_backend.action_school_subject
+#: model:ir.ui.menu,name:school_business_backend.menu_school_subject
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_list
+msgid "Subjects"
+msgstr "Matières"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Left School"
+msgstr "A quitté l'école"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Reactivate"
+msgstr "Réactiver"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Schooling"
+msgstr "Scolarité"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+msgid "Links"
+msgstr "Liens"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_search
+msgid "Search Students"
+msgstr "Rechercher des élèves"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_student
+msgid "Create a student"
+msgstr "Créer un élève"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_student
+msgid "Students are also created automatically when an admission request is enrolled."
+msgstr "Les élèves sont aussi créés automatiquement lorsqu'une demande d'admission est inscrite."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_form
+msgid "e.g. Mathematics"
+msgstr "ex. Mathématiques"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_subject_search
+msgid "Search Subjects"
+msgstr "Rechercher des matières"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_subject
+msgid "Create a subject (e.g. Mathematics, French, History...)"
+msgstr "Créer une matière (ex. Mathématiques, Français, Histoire...)"
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.model,name:school_business_backend.model_school_year
+#: model:ir.model.fields,field_description:school_business_backend.field_school_admission__school_year_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_classroom__school_year_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_student__school_year_id
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__name
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "School Year"
+msgstr "Année scolaire"
+
+#. module: school_business_backend
+#: model:ir.actions.act_window,name:school_business_backend.action_school_year
+#: model:ir.ui.menu,name:school_business_backend.menu_school_year
+msgid "School Years"
+msgstr "Années scolaires"
+
+#. module: school_business_backend
+#: model_terms:ir.actions.act_window,help:school_business_backend.action_school_year
+msgid "Create a school year"
+msgstr "Créer une année scolaire"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__date_start
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__date_end
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_year__state__open
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_year__state__closed
+msgid "Closed"
+msgstr "Clôturée"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_year__is_current
+msgid "Current Year"
+msgstr "Année en cours"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_res_company__current_school_year_id
+#: model:ir.model.fields,field_description:school_business_backend.field_res_config_settings__current_school_year_id
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "Current School Year"
+msgstr "Année scolaire en cours"
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_res_company__current_school_year_id
+msgid "All the new school data (admissions, classrooms, students) follow this school year."
+msgstr "Toutes les nouvelles données scolaires (admissions, classes, élèves) suivent cette année scolaire."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_list
+msgid "Current"
+msgstr "En cours"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_form
+msgid "Set as Current"
+msgstr "Définir comme année en cours"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_form
+msgid "Close Year"
+msgstr "Clôturer l'année"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_form
+msgid "Closing the school year cannot be undone by accident. Continue?"
+msgstr "Voulez-vous vraiment clôturer cette année scolaire ?"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_form
+msgid "Reopen"
+msgstr "Rouvrir"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_year_form
+msgid "e.g. 2026-2027"
+msgstr "ex. 2026-2027"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "All the data follow the current school year. Closing it is final until it is reopened from the school years list."
+msgstr "Toutes les données suivent l'année scolaire en cours. Sa clôture est définitive tant qu'elle n'est pas rouverte depuis la liste des années scolaires."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "Close this school year"
+msgstr "Clôturer cette année scolaire"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.res_config_settings_view_form_school
+msgid "Close the current school year? You will then have to select a new current year."
+msgstr "Clôturer l'année scolaire en cours ? Vous devrez ensuite sélectionner une nouvelle année en cours."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_year_name_company_unique
+msgid "A school year with this name already exists."
+msgstr "Une année scolaire portant ce nom existe déjà."
+
+#. module: school_business_backend
+#: model:ir.model.constraint,message:school_business_backend.constraint_school_year_dates_check
+msgid "The end date must be after the start date."
+msgstr "La date de fin doit être postérieure à la date de début."
+
+#. module: school_business_backend
+#: code:addons/school_business_backend/models/school_year.py:0
+msgid "The school year %(year)s overlaps with %(other)s."
+msgstr "L'année scolaire %(year)s chevauche %(other)s."
+
+#. module: school_business_backend
+#: code:addons/school_business_backend/models/school_year.py:0
+msgid "The year %s is the current school year. Select another current year in the settings before closing it."
+msgstr "L'année %s est l'année scolaire en cours. Sélectionnez une autre année en cours dans les paramètres avant de la clôturer."
+
+#. module: school_business_backend
+#: code:addons/school_business_backend/models/res_company.py:0
+#: code:addons/school_business_backend/models/school_year.py:0
+msgid "A closed school year cannot be the current year."
+msgstr "Une année scolaire clôturée ne peut pas être l'année en cours."
+
+#. module: school_business_backend
+#. odoo-python
+#: model:ir.actions.act_window,name:school_business_backend.action_school_grade_export_wizard
+#: model:ir.actions.report,name:school_business_backend.action_report_school_report_card
+#: model:ir.model,name:school_business_backend.model_school_grade_export_wizard
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_export_wizard_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_student_form
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: code:addons/school_business_backend/models/school_student.py:0
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Report Card"
+msgstr "Bulletin"
+
+
+#. module: school_business_backend
+#: model:ir.model.fields,help:school_business_backend.field_school_grade_export_wizard__period_id
+msgid "Leave empty to export all the periods of the school year."
+msgstr "Laissez vide pour imprimer toutes les périodes de l'année scolaire."
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "There is no grade to export for this selection."
+msgstr "Il n'y a aucune note à imprimer pour cette sélection."
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Grades (/20)"
+msgstr "Notes (/20)"
+
+#. module: school_business_backend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "General average"
+msgstr "Moyenne générale"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Parent / Guardian signature"
+msgstr "Signature du parent / tuteur"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "School Director"
+msgstr "Le directeur de l'école"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Student:"
+msgstr "Élève :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Student Number:"
+msgstr "Matricule :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Level:"
+msgstr "Niveau :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Classroom:"
+msgstr "Classe :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "School Year:"
+msgstr "Année scolaire :"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+msgid "Date of Birth:"
+msgstr "Date de naissance :"
+
+#. module: school_business_backend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Average x Coefficient"
+msgstr "Moyenne x Coefficient"
+
+#. module: school_business_backend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_backend.report_school_report_card
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Total"
+msgstr "Total"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_export_wizard_form
+msgid "Export"
+msgstr "Exporter"
+
+#. module: school_business_backend
+#: model_terms:ir.ui.view,arch_db:school_business_backend.view_school_grade_export_wizard_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade_export_wizard__export_format
+msgid "Format"
+msgstr "Format"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade_export_wizard__export_format__xlsx
+msgid "Excel"
+msgstr "Excel"
+
+#. module: school_business_backend
+#: model:ir.model.fields.selection,name:school_business_backend.selection__school_grade_export_wizard__export_format__pdf
+msgid "PDF"
+msgstr "PDF"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade_export_wizard__file_data
+msgid "File"
+msgstr "Fichier"
+
+#. module: school_business_backend
+#: model:ir.model.fields,field_description:school_business_backend.field_school_grade_export_wizard__file_name
+msgid "File Name"
+msgstr "Nom du fichier"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "Grades of %s"
+msgstr "Notes de %s"
+
+#. module: school_business_backend
+#. odoo-python
+#: code:addons/school_business_backend/wizard/school_grade_export_wizard.py:0
+msgid "All periods"
+msgstr "Toutes les périodes"

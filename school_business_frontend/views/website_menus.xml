@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="menu_school_admission_apply" model="website.menu">
+        <field name="name">Admission</field>
+        <field name="url">/admission/apply</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">60</field>
+    </record>
+
+</odoo>

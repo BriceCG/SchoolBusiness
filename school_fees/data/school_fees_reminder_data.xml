@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="mail_template_school_fee_reminder" model="mail.template">
+            <field name="name">School Fees: overdue reminder</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="email_from">{{ (object.invoice_user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="subject">{{ object.company_id.name }} - Payment reminder (Invoice {{ object.name }})</field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="report_template_ids" eval="[(4, ref('account.account_invoices'))]"/>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p>Dear <t t-out="object.partner_id.name or ''">Parent</t>,</p>
+    <p>
+        Our records show that invoice <strong t-out="object.name or ''">INV/2026/0001</strong>
+        <t t-if="object.student_id">for <strong t-out="object.student_id.name"/></t>
+        is still unpaid. It was due on <t t-out="object.invoice_date_due or ''">2026-01-01</t>
+        (<t t-out="object.school_days_overdue">5</t> days ago).
+    </p>
+    <p>
+        Amount due:
+        <strong t-out="object.amount_residual" t-options="{'widget': 'monetary', 'display_currency': object.currency_id}">100.00</strong>
+    </p>
+    <p>
+        Reminder <t t-out="object.school_reminder_count + 1">1</t> of <t t-out="object.school_reminder_max">3</t>.
+        If you have already paid, please ignore this message.
+    </p>
+    <p>Thank you,<br/><t t-out="object.company_id.name or ''">School</t></p>
+</div>
+            </field>
+        </record>
+
+        <record id="ir_cron_school_fees_send_reminders" model="ir.cron">
+            <field name="name">School Fees: send the overdue reminders</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_send_school_reminders()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+
+    </data>
+</odoo>

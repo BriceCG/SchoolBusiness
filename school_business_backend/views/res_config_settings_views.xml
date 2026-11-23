@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_school" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.school</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="85"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="School" string="School" name="school_business_backend"
+                     groups="base.group_system">
+                    <block title="School Year" name="school_year_setting_container">
+                        <setting id="current_school_year_setting" string="Current School Year"
+                                 help="All the data follow the current school year. Closing it is final until it is reopened from the school years list.">
+                            <field name="current_school_year_id" options="{'no_create': True}"/>
+                            <div class="mt8">
+                                <button name="action_close_school_year" type="object"
+                                        string="Close this school year" class="btn-link"
+                                        icon="oi-arrow-right"
+                                        invisible="not current_school_year_id"
+                                        confirm="Close the current school year? You will then have to select a new current year."/>
+                            </div>
+                        </setting>
+                    </block>
+                    <block title="Grades" name="school_grades_setting_container">
+                        <setting id="school_period_type_setting" string="Grading Periods"
+                                 company_dependent="1"
+                                 help="Choose how the school year is divided to record the grades.">
+                            <field name="school_period_type" widget="radio"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_school_config_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'school_business_backend', 'bin_size': False}</field>
+    </record>
+
+</odoo>

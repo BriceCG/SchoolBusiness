@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_grade_export_wizard_form" model="ir.ui.view">
+        <field name="name">school.grade.export.wizard.form</field>
+        <field name="model">school.grade.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Report Card">
+                <field name="period_type" invisible="1"/>
+                <group>
+                    <field name="student_id" readonly="1"/>
+                    <field name="school_year_id" options="{'no_create': True}"/>
+                    <field name="period_id" options="{'no_create': True}"/>
+                    <field name="export_format" widget="radio"/>
+                </group>
+                <footer>
+                    <button name="action_export" string="Export" type="object" class="btn-primary"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_school_grade_export_wizard" model="ir.actions.act_window">
+        <field name="name">Report Card</field>
+        <field name="res_model">school.grade.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Step 1: admission information -->
+    <template id="admission_form" name="Admission Request Form">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-9">
+                            <h1 class="mb-1">Admission Request</h1>
+                            <p class="text-muted mb-4">
+                                Step 1 of 2 - Fill in the admission information. You will then be asked to upload your application document.
+                            </p>
+
+                            <div t-if="errors.get('general')" class="alert alert-danger" role="alert">
+                                <t t-out="errors['general']"/>
+                            </div>
+
+                            <form id="school_admission_form" t-att-action="form_action" method="post"
+                                  enctype="multipart/form-data" class="needs-validation">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input t-if="token" type="hidden" name="token" t-att-value="token"/>
+
+                                <h4 class="mt-3">Student Information</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="student_name">Student Name *</label>
+                                        <input type="text" id="student_name" name="student_name" required="required"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('student_name') else ''}"
+                                               t-att-value="form.get('student_name')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('student_name')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="student_email">Student Email *</label>
+                                        <input type="email" id="student_email" name="student_email" required="required"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('student_email') else ''}"
+                                               t-att-value="form.get('student_email')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('student_email')"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label" for="date_of_birth">Date of Birth *</label>
+                                        <input type="date" id="date_of_birth" name="date_of_birth" required="required"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('date_of_birth') else ''}"
+                                               t-att-value="form.get('date_of_birth')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('date_of_birth')"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label" for="place_of_birth">Place of Birth</label>
+                                        <input type="text" id="place_of_birth" name="place_of_birth" class="form-control"
+                                               t-att-value="form.get('place_of_birth')"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label" for="gender">Gender</label>
+                                        <select id="gender" name="gender" class="form-select">
+                                            <option value="">-</option>
+                                            <option value="male" t-att-selected="form.get('gender') == 'male'">Male</option>
+                                            <option value="female" t-att-selected="form.get('gender') == 'female'">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="nationality_id">Nationality</label>
+                                        <select id="nationality_id" name="nationality_id" class="form-select">
+                                            <option value="">-</option>
+                                            <t t-foreach="countries" t-as="country">
+                                                <option t-att-value="country.id"
+                                                        t-att-selected="form.get('nationality_id') == str(country.id)"
+                                                        t-out="country.name"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="photo">Photo</label>
+                                        <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('photo') else ''}"/>
+                                        <div class="invalid-feedback" t-out="errors.get('photo')"/>
+                                    </div>
+                                </div>
+
+                                <h4 class="mt-4">Address</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="street">Street</label>
+                                        <input type="text" id="street" name="street" class="form-control"
+                                               t-att-value="form.get('street')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="street2">Street 2</label>
+                                        <input type="text" id="street2" name="street2" class="form-control"
+                                               t-att-value="form.get('street2')"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="zip">ZIP</label>
+                                        <input type="text" id="zip" name="zip" class="form-control"
+                                               t-att-value="form.get('zip')"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="city">City</label>
+                                        <input type="text" id="city" name="city" class="form-control"
+                                               t-att-value="form.get('city')"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label" for="country_id">Country</label>
+                                        <select id="country_id" name="country_id" class="form-select">
+                                            <option value="">-</option>
+                                            <t t-foreach="countries" t-as="country">
+                                                <option t-att-value="country.id"
+                                                        t-att-selected="form.get('country_id') == str(country.id)"
+                                                        t-out="country.name"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 school_state_wrapper">
+                                        <label class="form-label" for="state_id">State</label>
+                                        <select id="state_id" name="state_id" class="form-select">
+                                            <option value="">-</option>
+                                            <t t-foreach="states" t-as="state">
+                                                <option t-att-value="state.id"
+                                                        t-att-data-country-id="state.country_id.id"
+                                                        t-att-selected="form.get('state_id') == str(state.id)"
+                                                        t-out="state.name"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <h4 class="mt-4">Parent / Guardian</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="parent_name">Parent/Guardian Name *</label>
+                                        <input type="text" id="parent_name" name="parent_name" required="required"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('parent_name') else ''}"
+                                               t-att-value="form.get('parent_name')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('parent_name')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="parent_relationship">Relationship</label>
+                                        <select id="parent_relationship" name="parent_relationship" class="form-select">
+                                            <option value="father" t-att-selected="form.get('parent_relationship', 'father') == 'father'">Father</option>
+                                            <option value="mother" t-att-selected="form.get('parent_relationship') == 'mother'">Mother</option>
+                                            <option value="guardian" t-att-selected="form.get('parent_relationship') == 'guardian'">Legal Guardian</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="parent_phone">Parent Phone *</label>
+                                        <input type="tel" id="parent_phone" name="parent_phone" required="required"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('parent_phone') else ''}"
+                                               t-att-value="form.get('parent_phone')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('parent_phone')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="parent_email">Parent Email</label>
+                                        <input type="email" id="parent_email" name="parent_email"
+                                               t-attf-class="form-control #{'is-invalid' if errors.get('parent_email') else ''}"
+                                               t-att-value="form.get('parent_email')"/>
+                                        <div class="invalid-feedback" t-out="errors.get('parent_email')"/>
+                                    </div>
+                                </div>
+
+                                <h4 class="mt-4">Requested Schooling</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="level_id">Requested Level *</label>
+                                        <select id="level_id" name="level_id" required="required"
+                                                t-attf-class="form-select #{'is-invalid' if errors.get('level_id') else ''}">
+                                            <option value="">-</option>
+                                            <t t-foreach="levels" t-as="level">
+                                                <option t-att-value="level.id"
+                                                        t-att-selected="form.get('level_id') == str(level.id)"
+                                                        t-out="level.name"/>
+                                            </t>
+                                        </select>
+                                        <div class="invalid-feedback" t-out="errors.get('level_id')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="school_year_id">Academic Year *</label>
+                                        <select id="school_year_id" name="school_year_id" required="required"
+                                                t-attf-class="form-select #{'is-invalid' if errors.get('school_year_id') else ''}">
+                                            <option value="">-</option>
+                                            <t t-foreach="school_years" t-as="year">
+                                                <option t-att-value="year.id"
+                                                        t-att-selected="(form.get('school_year_id') or default_year_id) == str(year.id)"
+                                                        t-out="year.name"/>
+                                            </t>
+                                        </select>
+                                        <div class="invalid-feedback" t-out="errors.get('school_year_id')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="previous_school">Previous School</label>
+                                        <input type="text" id="previous_school" name="previous_school" class="form-control"
+                                               t-att-value="form.get('previous_school')"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="previous_level">Previous Level</label>
+                                        <input type="text" id="previous_level" name="previous_level" class="form-control"
+                                               t-att-value="form.get('previous_level')"/>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        Continue <i class="fa fa-arrow-right ms-1"/>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Step 2: application document -->
+    <template id="admission_document" name="Admission Request Document">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <h1 class="mb-1">Application Document</h1>
+                            <p class="text-muted mb-2">
+                                Step 2 of 2 - Attach your application document to submit your request.
+                            </p>
+                            <div class="row mb-1">
+                                <div class="col-5 text-muted">Reference:</div>
+                                <div class="col-7"><strong t-out="admission.name"/></div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-5 text-muted">Student:</div>
+                                <div class="col-7"><strong t-out="admission.student_name"/></div>
+                            </div>
+
+                            <div t-if="error" class="alert alert-danger" role="alert">
+                                <t t-out="error"/>
+                            </div>
+
+                            <form t-attf-action="/admission/#{admission.id}/document/submit" method="post"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <input type="hidden" name="token" t-att-value="token"/>
+                                <div class="mb-3">
+                                    <label class="form-label" for="application_document">Application Document *</label>
+                                    <input type="file" id="application_document" name="application_document"
+                                           t-att-required="None if has_document else 'required'"
+                                           accept=".pdf,.jpg,.jpeg,.png" class="form-control"/>
+                                    <div t-if="has_document" class="form-text">
+                                        A document is already attached. Upload a new one only to replace it.
+                                    </div>
+                                    <div class="form-text">PDF, JPG or PNG, 10 MB maximum.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    Submit Application
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Confirmation -->
+    <template id="admission_done" name="Admission Request Submitted">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container py-5 text-center">
+                    <i class="fa fa-check-circle fa-4x text-success mb-3"/>
+                    <h1>Thank you!</h1>
+                    <p class="lead">Your admission request has been submitted.</p>
+                    <div class="row mb-1 mx-auto text-start" style="max-width: 420px;">
+                        <div class="col-5 text-muted">Reference:</div>
+                        <div class="col-7"><strong t-out="admission.name"/></div>
+                    </div>
+                    <div class="row mb-1 mx-auto text-start" style="max-width: 420px;">
+                        <div class="col-5 text-muted">Level:</div>
+                        <div class="col-7"><strong t-out="admission.level_id.name"/></div>
+                    </div>
+                    <div class="row mb-3 mx-auto text-start" style="max-width: 420px;">
+                        <div class="col-5 text-muted">Academic year:</div>
+                        <div class="col-7"><strong t-out="admission.school_year_id.name"/></div>
+                    </div>
+                    <p class="text-muted">
+                        Our admissions team will review your file and contact you for the next steps.
+                    </p>
+                    <a href="/" class="btn btn-primary">Back to Home</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

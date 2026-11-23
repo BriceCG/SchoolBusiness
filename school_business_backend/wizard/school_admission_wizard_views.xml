@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_school_admission_schedule_wizard_form" model="ir.ui.view">
+        <field name="name">school.admission.schedule.wizard.form</field>
+        <field name="model">school.admission.schedule.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="admission_id" invisible="1"/>
+                <field name="wizard_type" invisible="1"/>
+                <group>
+                    <field name="student_name" readonly="1"/>
+                    <field name="interview_date" invisible="wizard_type != 'interview'"
+                           required="wizard_type == 'interview'"/>
+                    <field name="interview_start_time" widget="float_time"
+                           invisible="wizard_type != 'interview'"
+                           required="wizard_type == 'interview'"/>
+                    <field name="interview_end_time" widget="float_time"
+                           invisible="wizard_type != 'interview'"
+                           required="wizard_type == 'interview'"/>
+                    <field name="exam_date" invisible="wizard_type != 'exam'"
+                           required="wizard_type == 'exam'"/>
+                    <field name="exam_start_time" widget="float_time"
+                           invisible="wizard_type != 'exam'"
+                           required="wizard_type == 'exam'"/>
+                    <field name="exam_end_time" widget="float_time"
+                           invisible="wizard_type != 'exam'"
+                           required="wizard_type == 'exam'"/>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="mail_activity_type_interview" model="mail.activity.type">
+            <field name="name">Admission Interview</field>
+            <field name="icon">fa-comments</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="mail_activity_type_exam" model="mail.activity.type">
+            <field name="name">Admission Entrance Exam</field>
+            <field name="icon">fa-pencil</field>
+            <field name="sequence">20</field>
+        </record>
+
+    </data>
+</odoo>
