@@ -14,16 +14,18 @@ Adds a public admission form to the website:
 """,
     'author': "Brice",
     'website': '',
-    'depends': ['school_business_backend', 'website'],
+    'depends': ['school_business_backend', 'school_fees', 'website'],
     'data': [
         'views/admission_templates.xml',
         'views/school_admission_views.xml',
         'views/res_partner_views.xml',
+        'views/dashboard_templates.xml',
         'views/website_menus.xml',
     ],
     'assets': {
         'web.assets_frontend': [
             'school_business_frontend/static/src/js/admission_form.js',
+            'school_business_frontend/static/src/css/dashboard.css',
         ],
     },
     'installable': True,

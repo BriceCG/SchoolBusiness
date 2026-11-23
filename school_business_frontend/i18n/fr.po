@@ -4,16 +4,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0
-"
-"Report-Msgid-Bugs-To: 
-"
-"Content-Type: text/plain; charset=UTF-8
-"
-"Plural-Forms: 
-"
-"Language: fr
-"
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: \n"
+"Language: fr\n"
 
 #. module: school_business_frontend
 #. odoo-python
@@ -60,6 +55,7 @@ msgstr "Niveau demandé"
 #. module: school_business_frontend
 #. odoo-python
 #: code:addons/school_business_frontend/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
 msgid "Academic year"
 msgstr "Année scolaire"
 
@@ -126,6 +122,9 @@ msgstr "Veuillez joindre le document de candidature."
 #. module: school_business_frontend
 #. odoo-python
 #: code:addons/school_business_frontend/controllers/main.py:0
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
 msgid "Photo"
 msgstr "Photo"
 
@@ -172,6 +171,7 @@ msgstr "Document de candidature *"
 
 #. module: school_business_frontend
 #: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_done
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard_forbidden
 msgid "Back to Home"
 msgstr "Retour à l'accueil"
 
@@ -423,3 +423,303 @@ msgstr "Le lien du formulaire a été envoyé."
 #: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_document
 msgid "A document is already attached. Upload a new one only to replace it."
 msgstr "Un document est déjà joint. Téléversez-en un nouveau uniquement pour le remplacer."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard_forbidden
+msgid "Access restricted"
+msgstr "Accès restreint"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard_forbidden
+msgid "This page is reserved for enrolled students."
+msgstr "Cette page est réservée aux élèves inscrits."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "In progress"
+msgstr "En cours"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "Next lesson"
+msgstr "Prochain cours"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "remaining"
+msgstr "restant"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "Weekly timetable"
+msgstr "Emploi du temps de la semaine"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "No lesson planned"
+msgstr "Aucun cours planifié"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "Your timetable has no upcoming lesson."
+msgstr "Votre emploi du temps n'a aucun cours à venir."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "My timetable of the week"
+msgstr "Mon emploi du temps de la semaine"
+
+#. module: school_business_frontend
+#. odoo-python
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+#: code:addons/school_business_frontend/controllers/dashboard.py:0
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Welcome back"
+msgstr "Bon retour"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "My details"
+msgstr "Mes informations"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Security"
+msgstr "Sécurité"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Average of the year (/20)"
+msgstr "Moyenne de l'année (/20)"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Amount to pay"
+msgstr "Montant à payer"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Next due date"
+msgstr "Prochaine échéance"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "overdue"
+msgstr "en retard"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "My grades"
+msgstr "Mes notes"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "See all"
+msgstr "Voir tout"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "No grades yet."
+msgstr "Aucune note pour le moment."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "My invoices"
+msgstr "Mes factures"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "No invoices yet."
+msgstr "Aucune facture pour le moment."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Due"
+msgstr "Échéance"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Paid"
+msgstr "Payée"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Overdue"
+msgstr "En retard"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Partially paid"
+msgstr "Partiellement payée"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "To pay"
+msgstr "À payer"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "Download"
+msgstr "Télécharger"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Student space"
+msgstr "Espace élève"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Average / 20"
+msgstr "Moyenne / 20"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Period"
+msgstr "Période"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "All periods"
+msgstr "Toutes les périodes"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Overall average (/20)"
+msgstr "Moyenne générale (/20)"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Best subject"
+msgstr "Meilleure matière"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Subjects evaluated"
+msgstr "Matières évaluées"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Evaluations"
+msgstr "Évaluations"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "No grades available for this selection yet."
+msgstr "Aucune note disponible pour cette sélection."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Averages by subject"
+msgstr "Moyennes par matière"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Coef."
+msgstr "Coef."
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "evaluation(s)"
+msgstr "évaluation(s)"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Latest grades"
+msgstr "Dernières notes"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Date"
+msgstr "Date"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Subject"
+msgstr "Matière"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Type"
+msgstr "Type"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "Grade"
+msgstr "Note"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/dashboard.py:0
+msgid "Tomorrow"
+msgstr "Demain"
+
+#. module: school_business_frontend
+#. odoo-python
+#: code:addons/school_business_frontend/controllers/main.py:0
+msgid "Please select a valid academic year."
+msgstr "Veuillez sélectionner une année scolaire valide."
+
+#. module: school_business_frontend
+#: model:ir.model.fields,field_description:school_business_frontend.field_res_partner__is_student
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.view_partner_form_inherit_is_student
+msgid "Is a Student"
+msgstr "Est un élève"
+
+#. module: school_business_frontend
+#: model:ir.model.fields,help:school_business_frontend.field_res_partner__is_student
+msgid "Set automatically once the admission of the contact is successful (enrolled)."
+msgstr "Renseigné automatiquement lorsque l'admission du contact est réussie (inscrit)."
+
+#. module: school_business_frontend
+#: model:website.menu,name:school_business_frontend.menu_school_admission_apply
+msgid "Admission"
+msgstr "Admission"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.admission_form
+msgid "Continue <i class=\"fa fa-arrow-right ms-1\"/>"
+msgstr "Continuer <i class=\"fa fa-arrow-right ms-1\"/>"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "<i class=\"fa fa-circle me-1 small\"/>In progress"
+msgstr "<i class=\"fa fa-circle me-1 small\"/>En cours"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_current_lesson
+msgid "<i class=\"fa fa-calendar me-1\"/>My timetable of the week"
+msgstr "<i class=\"fa fa-calendar me-1\"/>Mon emploi du temps de la semaine"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "<i class=\"fa fa-cog me-1\"/>My details"
+msgstr "<i class=\"fa fa-cog me-1\"/>Mes informations"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "<i class=\"fa fa-shield me-1\"/>Security"
+msgstr "<i class=\"fa fa-shield me-1\"/>Sécurité"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "<i class=\"fa fa-graduation-cap text-primary me-2\"/>My grades"
+msgstr "<i class=\"fa fa-graduation-cap text-primary me-2\"/>Mes notes"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "See all <i class=\"fa fa-arrow-right\"/>"
+msgstr "Voir tout <i class=\"fa fa-arrow-right\"/>"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_home
+msgid "<i class=\"fa fa-file-text-o text-primary me-2\"/>My invoices"
+msgstr "<i class=\"fa fa-file-text-o text-primary me-2\"/>Mes factures"
+
+#. module: school_business_frontend
+#: model_terms:ir.ui.view,arch_db:school_business_frontend.student_dashboard
+msgid "<option value=\"\">All periods</option>"
+msgstr "<option value=\"\">Toutes les périodes</option>"

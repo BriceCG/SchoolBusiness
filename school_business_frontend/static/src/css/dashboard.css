@@ -1,0 +1,193 @@
+.school-dashboard .sd-hero {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #db2777 100%);
+    color: #fff;
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.25);
+}
+
+.school-dashboard .sd-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    flex-shrink: 0;
+}
+
+.school-dashboard .sd-avatar-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2.5rem;
+}
+
+.school-dashboard .sd-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+}
+
+.school-dashboard .sd-score {
+    min-width: 130px;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.school-dashboard .sd-score-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.school-dashboard .sd-card {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.school-dashboard .row.g-3 .sd-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.school-dashboard .sd-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.school-dashboard .sd-card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.school-dashboard .sd-progress {
+    height: 10px;
+    border-radius: 999px;
+    background: #eef0f6;
+}
+
+.school-dashboard .sd-progress .progress-bar {
+    border-radius: 999px;
+}
+
+.school-dashboard .sd-table > :not(caption) > * > * {
+    padding: 0.75rem 0.5rem;
+}
+
+.school-dashboard .sd-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.school-dashboard .sd-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.school-dashboard .sd-row:last-child {
+    border-bottom: 0;
+}
+
+.school-dashboard .sd-lesson {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-left: 6px solid #4f46e5;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.12);
+}
+
+.school-dashboard .sd-lesson-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.school-dashboard .sd-lesson-icon-empty {
+    background: #eef0f6;
+    color: #8b93a7;
+}
+
+.school-dashboard .sd-lesson {
+    position: relative;
+}
+
+.school-dashboard .sd-lesson-toggle {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    align-self: center;
+    background: #eef0f6;
+    color: #4f46e5;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.school-dashboard .sd-lesson-toggle:hover {
+    background: #4f46e5;
+    color: #fff;
+}
+
+.school-dashboard .sd-lesson-toggle .fa {
+    transition: transform 0.2s ease;
+}
+
+.school-dashboard .sd-lesson-toggle:not(.collapsed) .fa {
+    transform: rotate(180deg);
+}
+
+.school-dashboard .sd-day {
+    padding: 0.9rem 1rem;
+    border-radius: 0.9rem;
+    background: #f7f8fc;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.school-dashboard .sd-day-today {
+    background: #eef0ff;
+    border-color: rgba(79, 70, 229, 0.35);
+}
+
+.school-dashboard .sd-day-lesson {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.5rem 0.6rem;
+    margin-top: 0.4rem;
+    border-radius: 0.6rem;
+    background: #fff;
+}
+
+.school-dashboard .sd-day-lesson-now {
+    box-shadow: inset 4px 0 0 #198754;
+}
+
+.school-dashboard .sd-day-time {
+    min-width: 44px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
